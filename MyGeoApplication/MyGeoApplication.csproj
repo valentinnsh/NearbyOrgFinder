@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>MyGeoApplication</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LeafletForBlazor" Version="2.0.0.4" />
+      <PackageReference Include="Radzen.Blazor" Version="4.23.2" />
+    </ItemGroup>
+
+</Project>
