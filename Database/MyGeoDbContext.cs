@@ -1,5 +1,4 @@
 using Database.Entities;
-using Database.Records;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
@@ -10,19 +9,19 @@ public class MyGeoDbContext : DbContext
 {
     protected readonly IConfiguration Configuration;
 
-    public MyGeoDbContext(IConfiguration configuration)
+    public MyGeoDbContext()
     {
-        Configuration = configuration;
+        // Configuration = configuration;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseNpgsql(Configuration.GetConnectionString("GeoDb"));
+        options.UseNpgsql("Host=localhost; Port=1; Database=geodb; Username=postgres; Password=geodb",
+            o => o.UseNetTopologySuite());
     }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        //Configure default schema
         builder.HasDefaultSchema("public");
         OnCommonModelCreating(builder);
     }
@@ -30,6 +29,10 @@ public class MyGeoDbContext : DbContext
     protected virtual void OnCommonModelCreating(ModelBuilder modelBuilder)
     {
        modelBuilder.Entity<SpatialRefSysEntity>().ToTable("spatial_ref_sys", "public");
+       modelBuilder.Entity<CityEntity>().ToTable("cities", "geo_data");
     }
     public IQueryable<SpatialRefSysEntity> SpatialRefSysEntities => Set<SpatialRefSysEntity>();
+    public IQueryable<CityEntity> Cities => Set<CityEntity>();
+
+    internal DbSet<CityEntity> CitiesSet { get; set; }
 }

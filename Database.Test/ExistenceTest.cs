@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Database.Test;
 
-public class Tests
+public class ExistenceTest
 {
     private ConfigurationBuilder _config;
 
@@ -17,10 +17,10 @@ public class Tests
     }
 
     [Test]
-    public async Task TryGettingInfoFromDefaultTable()
+    public async Task TryGettingSpbEntityFromDb()
     {
-        var context = new MyGeoDbContext(_config.Build());
-        var test = await context.SpatialRefSysEntities.FirstAsync();
-        test.Should().NotBeNull();
+        var context = new MyGeoDbContext();
+        var test = await context.Cities.FirstAsync();
+        test.Name.Should().Be("Saint-Petersburg");
     }
 }
