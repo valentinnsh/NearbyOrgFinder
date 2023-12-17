@@ -1,0 +1,35 @@
+@using LeafletForBlazor
+@using Radzen
+@using Radzen.Blazor
+@page "/test"
+
+<h1>Leaflet NuGet package</h1>
+ <Map
+        width="800px"
+        height="600px"
+        Parameters="@parameters"
+       GeoJSON_strings="@date_geojson.ToArray()"
+ ></Map> 
+
+    @code{
+
+            List<string> date_geojson = new List<string>()
+            {
+               "[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[26.097369,44.444941]},\"properties\":{\"name\":\"Beautiful Memories Store\"}}]"
+            };
+
+            Map.LoadParameters parameters = new Map.LoadParameters()
+            {
+                location = new Map.Location()
+                {
+                    longitude = 26.1107672,
+                    latitude = 44.4501715
+                },
+                zoom_level = 14,
+                map_scale = new Map.MapScale()
+                {
+                    has = false,
+                    meters = true
+                }
+            };
+    }

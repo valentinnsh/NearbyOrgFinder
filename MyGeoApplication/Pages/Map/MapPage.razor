@@ -29,70 +29,48 @@
     Parameters="_mapParameters"
     Options="_mapOptions"
     onMapDblClick ="@OnMapDblClickAsync"
+    GeoJSON_urls="@_geojsonUrls.ToArray()"
 ></Map>
-
 @code{
     [Inject] NotificationService Notifications { get; set; }
 
     private RealTimeMap _realTimeMap;	//reference to control
     private Map _map;
-    
-    readonly List<RealTimeMap.StreamPoint> _points = new List<RealTimeMap.StreamPoint>
+
+    private List<string> _geojsonUrls = new()
     {
-        new ()
-        {
-            guid = Guid.NewGuid(),
-            latitude = 59.948676,
-            longitude = 30.344487,
-            type = "type 1",
-            value = "a point-specific value",
-        }, 
-        new ()
-        {
-            guid = Guid.NewGuid(),
-            latitude = 59.945676,
-            longitude = 30.345487,
-            type = "type 2",
-            value = "another value"
-        }
+        "http://localhost:5160/api/points.json"
     };
 
     private async Task OnPointAddAsync()
     {
-        await _realTimeMap.Geometric.Points.upload(_points, true);
-        Notifications.Notify(NotificationSeverity.Success, string.Join(", ", _points.Select(_ => _.guid.ToString())));
-        // _realTimeMap.Geometric.Points.
+        Notifications.Notify(NotificationSeverity.Success, "Added some data?");
     }
 
     private async Task OnPointDelAsync()
     {
-        Notifications.Notify(NotificationSeverity.Info, $"Deleting pont {_points[0].guid.ToString()}");
-        await _realTimeMap.Geometric.Points.delete(_points[0].guid.ToString());
+        Notifications.Notify(NotificationSeverity.Info, $"Deleting pont");
     }
 
-    private async Task OnMapDblClickAsync(Map.CurrentMapState state)
+    private Task OnMapDblClickAsync(Map.CurrentMapState state)
     {
         Notifications.Notify(NotificationSeverity.Success, $"Map clicked! {state.location.latitude} {state.location.longitude}");
+        return Task.CompletedTask;
     }
     
-    private RealTimeMap.LoadParameters _realTimeMapParameters = new ()
-    {
-        location = new RealTimeMap.Location()
-        {
-            latitude = 59.938676,
-            longitude = 30.314487
-        },
-        zoom_level = 12
-    };
-    
-    private readonly Map.LoadParameters _mapParameters = new ()
+    private Map.LoadParameters _mapParameters = new ()
     {
         location = new Map.Location()
         {
             latitude = 59.938676,
             longitude = 30.314487
         },
-        zoom_level = 12
+        zoom_level = 12,
+        map_scale = new Map.MapScale()
+        {
+            has = false,
+            meters = true
+        }
     };
 
     private readonly Map.MapOptions _mapOptions = new()
