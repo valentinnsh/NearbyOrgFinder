@@ -1,8 +1,10 @@
 @page "/map"
-@using LeafletForBlazor
+
+@using OpenLayers.Blazor
 @using MyGeoApplication.Services
 @using Radzen
 @using Radzen.Blazor
+@using MarkerType = OpenLayers.Blazor.MarkerType
 
 <RadzenDialog/>
 <RadzenNotification/>
@@ -16,36 +18,35 @@
     <RadzenButton Text="Add Points" Click="@OnPointAddAsync" ButtonStyle="ButtonStyle.Secondary"/>
     <RadzenButton Text="Delete Points" Click="@OnPointDelAsync" ButtonStyle="ButtonStyle.Danger"/>
 </div>
-
-<Map
+@*<Map
     height="600px"
     @ref="_map"
-    Parameters="@_mapParameters"
     Options="_mapOptions"
     onMapDblClick ="@OnMapDblClickAsync"
     GeoJSON_urls="@_geojsonUrls.ToArray()"
-></Map>
+></Map>*@
+
+<OpenStreetMap @ref="_map" Style="height:600px;" Class="card mb-2" @bind-Center="_center">
+</OpenStreetMap>
+
 @code{
     [Inject] NotificationService Notifications { get; set; }
     [Inject] ICityService CityService { get; set; }
-    private RealTimeMap _realTimeMap;	//reference to control
-    private Map _map;
+
+    private Coordinate _center = new(0, 0);
+    private OpenStreetMap _map;
     private string? _name;
     
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if(!firstRender) return;
         try
         {
             var defaultCity = await CityService.GetCityByIdAsync("00000000-0000-0000-0000-000000000001");
-            _mapParameters.location = new Map.Location
-            {
-                latitude = defaultCity.Center.Y,
-                longitude = defaultCity.Center.X
-            };
             
             _name = defaultCity.Name;
-
-            await InvokeAsync(StateHasChanged);
+            _center = new Coordinate(defaultCity.Center.X, defaultCity.Center.Y);
+            StateHasChanged();
         }
         catch (Exception e)
         {
@@ -54,50 +55,29 @@
         }
     }
 
-    private List<string> _geojsonUrls = new()
-    {
-        "http://localhost:5160/api/points.json"
-    };
-
     private async Task OnPointAddAsync()
     {
+        if(_map.MarkersList.Count < 1)
+            _map.MarkersList.Add(new Marker(MarkerType.MarkerFlag, new Coordinate(30.345487, 59.945676), "Title 1"));
+        else
+        {
+            _map.MarkersList.Add(new Marker(MarkerType.MarkerFlag, new Coordinate(30.345489, 59.945476), "Title NEW"));
+        }
+        await InvokeAsync(StateHasChanged);
         Notifications.Notify(NotificationSeverity.Success, "Added some data?");
     }
 
     private async Task OnPointDelAsync()
     {
+        if(_map.MarkersList.Count > 1)
+            _map.MarkersList.RemoveAt(_map.MarkersList.Count-1);
         Notifications.Notify(NotificationSeverity.Info, $"Deleting pont");
     }
 
-    private Task OnMapDblClickAsync(Map.CurrentMapState state)
+    /*private Task OnMapDblClickAsync(Map.CurrentMapState state)
     {
         Notifications.Notify(NotificationSeverity.Success, $"Map clicked! {state.location.latitude} {state.location.longitude}");
         return Task.CompletedTask;
-    }
-    
-    private Map.LoadParameters _mapParameters = new ()
-    {
-        /*location = new Map.Location()
-        {
-            latitude = 59.938676,
-            longitude = 30.314487
-        },*/
-        zoom_level = 12,
-        map_scale = new Map.MapScale()
-        {
-            has = false,
-            meters = true
-        }
-    };
-
-    private RealTimeMap.LoadParameters _realTimeMapParameters = new RealTimeMap.LoadParameters();
-
-    private readonly Map.MapOptions _mapOptions = new()
-    {
-        interaction_options = new Map.InteractionOptions()
-        {
-            doubleClickZoom = false
-        }
-    };
+    }*/
 
 }

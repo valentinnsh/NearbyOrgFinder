@@ -1,35 +1,33 @@
-@using LeafletForBlazor
+@using MyGeoApplication.Services
+@using OpenLayers.Blazor
 @using Radzen
-@using Radzen.Blazor
 @page "/test"
 
-<h1>Leaflet NuGet package</h1>
- <Map
-        width="800px"
-        height="600px"
-        Parameters="@parameters"
-       GeoJSON_strings="@date_geojson.ToArray()"
- ></Map> 
+@inject IJSRuntime JSRuntime
 
-    @code{
+<OpenStreetMap @ref="_map" Style="height:480px; width:640px" Class="card mb-2" @bind-Center="_center">
+</OpenStreetMap>
 
-            List<string> date_geojson = new List<string>()
-            {
-               "[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[26.097369,44.444941]},\"properties\":{\"name\":\"Beautiful Memories Store\"}}]"
-            };
+@code {
+    [Inject] NotificationService Notifications { get; set; }
+    [Inject] ICityService CityService { get; set; }
+    private Coordinate _center = new(7.6, 46.5);
+    private OpenStreetMap _map;
+    private dynamic _kmlOptions = new { ShowPointNames = true, ExtractStyles = true };
 
-            Map.LoadParameters parameters = new Map.LoadParameters()
-            {
-                location = new Map.Location()
-                {
-                    longitude = 26.1107672,
-                    latitude = 44.4501715
-                },
-                zoom_level = 14,
-                map_scale = new Map.MapScale()
-                {
-                    has = false,
-                    meters = true
-                }
-            };
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(!firstRender) return;
+        try
+        {
+            var defaultCity = await CityService.GetCityByIdAsync("00000000-0000-0000-0000-000000000001");
+            _center = new Coordinate(defaultCity.Center.X, defaultCity.Center.Y);
+            StateHasChanged();
+        }
+        catch (Exception e)
+        {
+            Notifications.Notify(NotificationSeverity.Error, "Could not get SPB");
+            Console.WriteLine(e);
+        }
     }
+}

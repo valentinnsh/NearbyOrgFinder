@@ -8,10 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="LeafletForBlazor" Version="2.0.0.4" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
       <PackageReference Include="NetTopologySuite.IO.GeoJSON" Version="4.0.0" />
       <PackageReference Include="Npgsql.GeoJSON" Version="7.0.6" />
+      <PackageReference Include="OpenLayers" Version="4.6.4" />
+      <PackageReference Include="OpenLayers.Blazor" Version="1.5.0" />
       <PackageReference Include="Radzen.Blazor" Version="4.23.2" />
     </ItemGroup>
 
