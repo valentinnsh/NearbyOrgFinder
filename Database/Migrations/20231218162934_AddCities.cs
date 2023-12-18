@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using NetTopologySuite.Geometries;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -25,7 +26,7 @@ namespace Database.Migrations
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    external_id = table.Column<Guid>(type: "uuid", nullable: false),
+                    externalid = table.Column<Guid>(name: "external_id", type: "uuid", nullable: false),
                     name = table.Column<string>(type: "text", nullable: false),
                     center = table.Column<Point>(type: "geometry", nullable: false)
                 },
