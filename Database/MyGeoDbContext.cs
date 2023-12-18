@@ -30,6 +30,7 @@ public class MyGeoDbContext : DbContext
     {
        modelBuilder.Entity<SpatialRefSysEntity>().ToTable("spatial_ref_sys", "public");
        modelBuilder.Entity<CityEntity>().ToTable("cities", "geo_data");
+       modelBuilder.Entity<CityEntity>().Property(p => p.ExternalId).ValueGeneratedOnAdd();
     }
     public IQueryable<SpatialRefSysEntity> SpatialRefSysEntities => Set<SpatialRefSysEntity>();
     public IQueryable<CityEntity> Cities => Set<CityEntity>();

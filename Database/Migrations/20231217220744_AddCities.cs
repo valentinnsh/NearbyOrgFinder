@@ -25,6 +25,7 @@ namespace Database.Migrations
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    external_id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "text", nullable: false),
                     center = table.Column<Point>(type: "geometry", nullable: false)
                 },
@@ -33,7 +34,7 @@ namespace Database.Migrations
                     table.PrimaryKey("PK_cities", x => x.id);
                 });
             
-            migrationBuilder.Sql("INSERT INTO geo_data.cities (name, center) VALUES ('Saint-Petersburg', ST_SetSRID(ST_MakePoint(30.308611, 59.937500), 4326))");
+            migrationBuilder.Sql("INSERT INTO geo_data.cities (name, center, external_id) VALUES ('Saint-Petersburg', ST_SetSRID(ST_MakePoint(30.308611, 59.937500), 4326), '00000000-0000-0000-0000-000000000001')");
         }
 
         /// <inheritdoc />

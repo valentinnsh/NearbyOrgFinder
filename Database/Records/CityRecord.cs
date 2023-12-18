@@ -10,6 +10,8 @@ public class CityRecord
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
     public long Id { get; set; }
+    [Column("external_id")]
+    public Guid ExternalId { get; set; }
     [Column("name")]
     public string Name { get; set; }
     [Column("center")]

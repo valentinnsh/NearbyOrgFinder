@@ -35,7 +35,12 @@ namespace Database.Migrations
                         .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
+                    
+                    b.Property<long>("ExternalId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+                    
                     b.Property<Point>("Center")
                         .IsRequired()
                         .HasColumnType("geometry")
