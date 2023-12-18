@@ -16,13 +16,14 @@ public class MyGeoDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseNpgsql("Host=localhost; Port=1; Database=geodb; Username=postgres; Password=geodb",
+        options.UseNpgsql("Host=localhost; Port=1; Database=geodb; Username=postgres; Password=geodb", 
             o => o.UseNetTopologySuite());
     }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.HasDefaultSchema("public");
+        builder.HasPostgresExtension("postgis");
         OnCommonModelCreating(builder);
     }
 

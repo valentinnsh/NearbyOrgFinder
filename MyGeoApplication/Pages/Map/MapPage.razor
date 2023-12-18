@@ -1,5 +1,6 @@
 @page "/map"
 @using LeafletForBlazor
+@using MyGeoApplication.Services
 @using Radzen
 @using Radzen.Blazor
 
@@ -9,33 +10,49 @@
 
 <PageTitle>Map</PageTitle>
 
-<h2>Map</h2>
+<h2>Map of @_name</h2>
 
 <div style="margin-bottom: 10px">
     <RadzenButton Text="Add Points" Click="@OnPointAddAsync" ButtonStyle="ButtonStyle.Secondary"/>
     <RadzenButton Text="Delete Points" Click="@OnPointDelAsync" ButtonStyle="ButtonStyle.Danger"/>
 </div>
 
-@*<RealTimeMap 
-    height="600px"
-    @ref="_realTimeMap" 
-    Parameters="_realTimeMapParameters"
-    onMapClick="@OnMapDblClickAsync"
-></RealTimeMap>*@
-
 <Map
     height="600px"
     @ref="_map"
-    Parameters="_mapParameters"
+    Parameters="@_mapParameters"
     Options="_mapOptions"
     onMapDblClick ="@OnMapDblClickAsync"
     GeoJSON_urls="@_geojsonUrls.ToArray()"
 ></Map>
 @code{
     [Inject] NotificationService Notifications { get; set; }
-
+    [Inject] ICityService CityService { get; set; }
     private RealTimeMap _realTimeMap;	//reference to control
     private Map _map;
+    private string? _name;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var defaultCity = await CityService.GetCityByIdAsync("00000000-0000-0000-0000-000000000001");
+            _mapParameters.location = new Map.Location
+            {
+                latitude = defaultCity.Center.Y,
+                longitude = defaultCity.Center.X
+            };
+            
+            _name = defaultCity.Name;
+
+            await InvokeAsync(StateHasChanged);
+        }
+        catch (Exception e)
+        {
+            Notifications.Notify(NotificationSeverity.Error, "Could not get SPB");
+            Console.WriteLine(e);
+        }
+    }
 
     private List<string> _geojsonUrls = new()
     {
@@ -60,11 +77,11 @@
     
     private Map.LoadParameters _mapParameters = new ()
     {
-        location = new Map.Location()
+        /*location = new Map.Location()
         {
             latitude = 59.938676,
             longitude = 30.314487
-        },
+        },*/
         zoom_level = 12,
         map_scale = new Map.MapScale()
         {
@@ -72,6 +89,8 @@
             meters = true
         }
     };
+
+    private RealTimeMap.LoadParameters _realTimeMapParameters = new RealTimeMap.LoadParameters();
 
     private readonly Map.MapOptions _mapOptions = new()
     {
