@@ -15,7 +15,7 @@ public class SchoolRecord
     public string Name { get; set; }
     
     [Column("description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
     
     [Column("address")]
     public string Address { get; set; }
@@ -24,35 +24,35 @@ public class SchoolRecord
     public Point Location { get; set; }
     
     [Column("address_comment")]
-    public string AddressComment { get; set; }
+    public string? AddressComment { get; set; }
     
     [Column("mail_index")]
-    public string MailIndex { get; set; }
+    public string? MailIndex { get; set; }
     
     [Column("district")]
-    public string District { get; set; }
+    public string? District { get; set; }
     
     [Column("city_id")]
     public long CityId { get; set; }
     
     [Column("okrug")]
-    public string Okrug { get; set; }
+    public string? Okrug { get; set; }
     
     [Column("region")]
-    public string Region { get; set; }
+    public string? Region { get; set; }
     
     [Column("country")]
-    public string Country { get; set; }
+    public string? Country { get; set; }
     
     [Column("working_hours")]
-    public string WorkingHours { get; set; }
+    public string? WorkingHours { get; set; }
     
     [Column("timezone")]
-    public string Timezone { get; set; }
+    public string? Timezone { get; set; }
     
     [Column("rating")]
     public double? Rating { get; set; }
     
     [Column("two_gis_url")]
-    public string TwoGisUrl { get; set; }   
+    public string? TwoGisUrl { get; set; }   
 }

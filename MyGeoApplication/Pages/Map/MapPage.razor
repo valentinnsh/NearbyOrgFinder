@@ -208,10 +208,7 @@
 
     private async Task ResetAsync()
     {
-        // Reset Schools
-        _showSchools = true;
-        await ToggleSchoolMarkersAsync();
-
+        // Reset nearest School
         _map.MarkersList.Remove(_nearestSchoolMarker);
         _nearestSchool = null;
         
@@ -219,6 +216,6 @@
         _map.MarkersList.Remove(_selectedPoint);
         _selectedPoint = null;
         
-        await InvokeAsync(StateHasChanged);
+        // StateHasChanged();
     }
 }

@@ -71,7 +71,6 @@ namespace Database.Migrations
                         .HasColumnName("address");
 
                     b.Property<string>("AddressComment")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("address_comment");
 
@@ -80,17 +79,14 @@ namespace Database.Migrations
                         .HasColumnName("city_id");
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("country");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("description");
 
                     b.Property<string>("District")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("district");
 
@@ -100,7 +96,6 @@ namespace Database.Migrations
                         .HasColumnName("location");
 
                     b.Property<string>("MailIndex")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("mail_index");
 
@@ -110,7 +105,6 @@ namespace Database.Migrations
                         .HasColumnName("name");
 
                     b.Property<string>("Okrug")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("okrug");
 
@@ -119,22 +113,18 @@ namespace Database.Migrations
                         .HasColumnName("rating");
 
                     b.Property<string>("Region")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("region");
 
                     b.Property<string>("Timezone")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("timezone");
 
                     b.Property<string>("TwoGisUrl")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("two_gis_url");
 
                     b.Property<string>("WorkingHours")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("working_hours");
 

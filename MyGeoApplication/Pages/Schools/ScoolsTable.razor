@@ -3,6 +3,8 @@
 @using Database.Entities
 @using Database
 @using System.Linq.Dynamic.Core
+@using Microsoft.EntityFrameworkCore
+@using MyGeoApplication.Services
 @page "/schools"
 
 
@@ -14,25 +16,67 @@
 <PageTitle>Schools</PageTitle>
 
 <div class="tool-panel">
-    <RadzenButton Text="Add" ButtonStyle="ButtonStyle.Light" Click="@OnAddSchool"/>
+    <RadzenButton Text="Add" ButtonStyle="ButtonStyle.Primary" Click="@OnAddSchoolOpen"/>
     <RadzenButton Text="Export to Csv" ButtonStyle="ButtonStyle.Light" Click="@OnExportToCSV"/>
 </div>
 
 <RadzenDataGrid
     TItem="SchoolEntity"
+    @ref="_grid"
     Data="@_schools"
     Count="@_count"
     IsLoading="@isLoading"
     LoadData="@LoadData"
+    AllowPaging="true"
     AllowFiltering="true">
     <EmptyTemplate>
         @CommonFragments.EmptyGridContent
     </EmptyTemplate>
+    <Template Context="item">
+        <div class="details-control-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">School Details</h3>
+                </div>
+                <div class="panel-body">
+                    <dl class="row">
+                        <dt class="col-sm-2 text-right">Description:</dt>
+                        <dd class="col-sm-10">@item.Description</dd>
+                    </dl>
+                </div>
+                <div class="panel-body">
+                    <dl class="row">
+                        <dt class="col-sm-2 text-right">Address:</dt>
+                        <dd class="col-sm-10">@item.Address (@item.AddressComment)</dd>
+                    </dl>
+                </div>
+                <div class="panel-body">
+                    <dl class="row">
+                        <dt class="col-sm-2 text-right">Working hours:</dt>
+                        <dd class="col-sm-10">@item.WorkingHours</dd>
+                    </dl>
+                </div>
+                <div class="panel-body">
+                    <dl class="row">
+                        <dt class="col-sm-2 text-right">MailIndex</dt>
+                        <dd class="col-sm-10">@item.MailIndex</dd>
+                    </dl>
+                </div>
+                <div class="panel-body">
+                    <dl class="row">
+                        <dt class="col-sm-2 text-right">URL:</dt>
+                        <dd class="col-sm-10">@item.TwoGisUrl</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </Template>
     <Columns>
         <RadzenDataGridColumn TItem="SchoolEntity" Title="Actions" Width="10ex" MinWidth="10ex" Resizable="false"
                               Sortable="false" Filterable="false">
             <Template Context="school">
                 <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnDeleteSchool(school))"/>
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnEditSchool(school))"/>
             </Template>
         </RadzenDataGridColumn>
         <RadzenDataGridColumn TItem="SchoolEntity" Title="Name" Property="@nameof(SchoolEntity.Name)" Filterable="true"/>
@@ -42,21 +86,19 @@
 
 @code {
     [Inject] NotificationService Notifications { get; set; }
+    [Inject] DialogService DialogService { get; set; }
     [Inject] MyGeoDbContext DbCOntext { get; set; }
-
+    [Inject] ISchoolsService SchoolsService { get; set; }
+    
     private IEnumerable<SchoolEntity> _schools;
     private int _count;
     bool isLoading;
-    
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-    }
-    
+    private RadzenDataGrid<SchoolEntity> _grid;
+
     async Task LoadData(LoadDataArgs args)
     {
         isLoading = true;
-        var query = DbCOntext.Schools.AsQueryable();
+        var query = DbCOntext.Schools.Include(_ => _.City).AsQueryable();
 
         if (!string.IsNullOrEmpty(args.Filter))
         {
@@ -74,9 +116,16 @@
         isLoading = false;
     } 
 
-    private void OnAddSchool()
+    private Task<object> OnAddSchoolOpen()
     {
-        Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
+        DialogService.OnClose += OnAddSchoolClosed;
+        return CreateSchoolDialog.OpenAsync(DialogService);
+    }
+
+    private void OnAddSchoolClosed(object obj)
+    {
+        DialogService.OnClose -= OnAddSchoolClosed;
+        if (obj != null) _grid.Reload();
     }
 
     private void OnExportToCSV()
@@ -85,6 +134,24 @@
     }
 
     private async Task OnDeleteSchool(SchoolEntity school)
+    {
+        var confirm = await DialogService.Confirm("Are you sure?", "Delete School", new ConfirmOptions() { OkButtonText = "Yes", CancelButtonText = "No" });
+        if (confirm != true) return;
+        try
+        {
+            await SchoolsService.DeleteSchoolAsync(school.Id);
+        }
+        catch (Exception e)
+        {
+            Notifications.Notify(NotificationSeverity.Error, "Failed to delete school");
+        }
+        finally
+        {
+            _grid.Reload();
+        }
+    }
+
+    private async Task OnEditSchool(SchoolEntity school)
     {
         Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
     }
