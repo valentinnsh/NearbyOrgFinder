@@ -3,6 +3,7 @@ using System;
 using Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetTopologySuite.Geometries;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -12,9 +13,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Database.Migrations
 {
     [DbContext(typeof(MyGeoDbContext))]
-    partial class MyGeoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231218181627_AddSchools")]
+    partial class AddSchools
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,46 +143,6 @@ namespace Database.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("schools", "geo_data");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            Address = "Большая Пушкарская, 35",
-                            AddressComment = "",
-                            CityId = 1L,
-                            Country = "Россия",
-                            Description = "частная школа",
-                            District = "Петроградский район",
-                            Location = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=0;POINT (30.308695 59.961798)"),
-                            MailIndex = "197101",
-                            Name = "Крылья",
-                            Okrug = "",
-                            Rating = 5.0,
-                            Region = "Санкт-Петербург",
-                            Timezone = "+03:00",
-                            TwoGisUrl = "https://2gis.com/firm/70000001068931674",
-                            WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00"
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            Address = "Средний проспект В.О., 28",
-                            AddressComment = "2 этаж",
-                            CityId = 1L,
-                            Country = "Россия",
-                            Description = "частная школа",
-                            District = "Василеостровский район",
-                            Location = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=0;POINT (30.279865 59.942844)"),
-                            MailIndex = "199004",
-                            Name = "Ювента",
-                            Okrug = "",
-                            Rating = 4.0,
-                            Region = "Санкт-Петербург",
-                            Timezone = "+03:00",
-                            TwoGisUrl = "https://2gis.com/firm/5348552838706876",
-                            WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00"
-                        });
                 });
 
             modelBuilder.Entity("Database.Entities.SchoolEntity", b =>
