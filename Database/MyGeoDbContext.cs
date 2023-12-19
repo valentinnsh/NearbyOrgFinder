@@ -90,6 +90,8 @@ public class MyGeoDbContext : DbContext
             });
     }
     public IQueryable<CityEntity> Cities => Set<CityEntity>();
+    public IQueryable<SchoolEntity> Schools => Set<SchoolEntity>();
+
 
     internal DbSet<CityEntity> CitiesSet { get; set; }
 }

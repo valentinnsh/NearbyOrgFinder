@@ -1,0 +1,91 @@
+@using Radzen
+@using Radzen.Blazor
+@using Database.Entities
+@using Database
+@using System.Linq.Dynamic.Core
+@page "/schools"
+
+
+
+<RadzenDialog/>
+<RadzenNotification/>
+<RadzenTooltip/>
+
+<PageTitle>Schools</PageTitle>
+
+<div class="tool-panel">
+    <RadzenButton Text="Add" ButtonStyle="ButtonStyle.Light" Click="@OnAddSchool"/>
+    <RadzenButton Text="Export to Csv" ButtonStyle="ButtonStyle.Light" Click="@OnExportToCSV"/>
+</div>
+
+<RadzenDataGrid
+    TItem="SchoolEntity"
+    Data="@_schools"
+    Count="@_count"
+    IsLoading="@isLoading"
+    LoadData="@LoadData"
+    AllowFiltering="true">
+    <EmptyTemplate>
+        @CommonFragments.EmptyGridContent
+    </EmptyTemplate>
+    <Columns>
+        <RadzenDataGridColumn TItem="SchoolEntity" Title="Actions" Width="10ex" MinWidth="10ex" Resizable="false"
+                              Sortable="false" Filterable="false">
+            <Template Context="school">
+                <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnDeleteSchool(school))"/>
+            </Template>
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="SchoolEntity" Title="Name" Property="@nameof(SchoolEntity.Name)" Filterable="true"/>
+        <RadzenDataGridColumn TItem="SchoolEntity" Title="Location" Property="@nameof(SchoolEntity.Location)" Filterable="false"/>
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    [Inject] NotificationService Notifications { get; set; }
+    [Inject] MyGeoDbContext DbCOntext { get; set; }
+
+    private IEnumerable<SchoolEntity> _schools;
+    private int _count;
+    bool isLoading;
+    
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+    }
+    
+    async Task LoadData(LoadDataArgs args)
+    {
+        isLoading = true;
+        var query = DbCOntext.Schools.AsQueryable();
+
+        if (!string.IsNullOrEmpty(args.Filter))
+        {
+            query = query.Where(args.Filter);
+        }
+
+        if (!string.IsNullOrEmpty(args.OrderBy))
+        {
+            query = query.OrderBy(args.OrderBy);
+        }
+
+        _count = query.Count();
+        _schools = query.Skip(args.Skip.Value).Take(args.Top.Value).ToList();
+        
+        isLoading = false;
+    } 
+
+    private void OnAddSchool()
+    {
+        Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
+    }
+
+    private void OnExportToCSV()
+    {
+        Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
+    }
+
+    private async Task OnDeleteSchool(SchoolEntity school)
+    {
+        Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
+    }
+}
