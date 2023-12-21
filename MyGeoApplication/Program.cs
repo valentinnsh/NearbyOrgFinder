@@ -30,6 +30,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
+builder.Services.AddScoped<ISchoolsService, SchoolsService>();
 
 builder.Services.AddControllers(options =>
 {
