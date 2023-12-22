@@ -4,5 +4,5 @@ namespace Database.Entities;
 
 public class CityEntity: CityRecord
 {
-    public ICollection<SchoolEntity> Schools { get; set; }
+    public ICollection<OrganizationEntity> Organizations { get; set; }
 }

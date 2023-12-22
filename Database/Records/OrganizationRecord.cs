@@ -4,12 +4,15 @@ using NetTopologySuite.Geometries;
 
 namespace Database.Records;
 
-public class SchoolRecord
+public class OrganizationRecord
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
     public long Id { get; set; }
+    
+    [Column("type")]
+    public OrganizationTypes Type { get; set; }
     
     [Column("name")]
     public string Name { get; set; }

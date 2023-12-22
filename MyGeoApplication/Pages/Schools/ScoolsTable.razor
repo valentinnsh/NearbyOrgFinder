@@ -21,7 +21,7 @@
 </div>
 
 <RadzenDataGrid
-    TItem="SchoolEntity"
+    TItem="OrganizationEntity"
     @ref="_grid"
     Data="@_schools"
     Count="@_count"
@@ -73,15 +73,15 @@
         </div>
     </Template>
     <Columns>
-        <RadzenDataGridColumn TItem="SchoolEntity" Title="Actions" Width="10ex" MinWidth="10ex" Resizable="false"
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Actions" Width="10ex" MinWidth="10ex" Resizable="false"
                               Sortable="false" Filterable="false">
             <Template Context="school">
                 <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnDeleteSchool(school))"/>
                 <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnEditSchool(school))"/>
             </Template>
         </RadzenDataGridColumn>
-        <RadzenDataGridColumn TItem="SchoolEntity" Title="Name" Property="@nameof(SchoolEntity.Name)" Filterable="true"/>
-        <RadzenDataGridColumn TItem="SchoolEntity" Title="Location" Property="@nameof(SchoolEntity.Location)" Filterable="false"/>
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Name" Property="@nameof(OrganizationEntity.Name)" Filterable="true"/>
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Location" Property="@nameof(OrganizationEntity.Location)" Filterable="false"/>
     </Columns>
 </RadzenDataGrid>
 
@@ -91,15 +91,15 @@
     [Inject] MyGeoDbContext DbCOntext { get; set; }
     [Inject] ISchoolsService SchoolsService { get; set; }
     
-    private IEnumerable<SchoolEntity> _schools;
+    private IEnumerable<OrganizationEntity> _schools;
     private int _count;
     bool isLoading;
-    private RadzenDataGrid<SchoolEntity> _grid;
+    private RadzenDataGrid<OrganizationEntity> _grid;
 
     async Task LoadData(LoadDataArgs args)
     {
         isLoading = true;
-        var query = DbCOntext.Schools.Include(_ => _.City).AsQueryable();
+        var query = DbCOntext.Organizations.Where(_ => _.Type == OrganizationTypes.School).Include(_ => _.City).AsQueryable();
 
         if (!string.IsNullOrEmpty(args.Filter))
         {
@@ -134,13 +134,13 @@
         Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
     }
 
-    private async Task OnDeleteSchool(SchoolEntity school)
+    private async Task OnDeleteSchool(OrganizationEntity organization)
     {
         var confirm = await DialogService.Confirm("Are you sure?", "Delete School", new ConfirmOptions() { OkButtonText = "Yes", CancelButtonText = "No" });
         if (confirm != true) return;
         try
         {
-            await SchoolsService.DeleteSchoolAsync(school.Id);
+            await SchoolsService.DeleteSchoolAsync(organization.Id);
         }
         catch (Exception e)
         {
@@ -152,7 +152,7 @@
         }
     }
 
-    private async Task OnEditSchool(SchoolEntity school)
+    private async Task OnEditSchool(OrganizationEntity organization)
     {
         Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
     }

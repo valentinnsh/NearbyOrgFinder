@@ -37,9 +37,9 @@ public class MyGeoDbContext : DbContext
        var city = modelBuilder.Entity<CityEntity>().ToTable("cities", "geo_data");
        city.Property(p => p.ExternalId).ValueGeneratedOnAdd();
        
-       var schools = modelBuilder.Entity<SchoolEntity>().ToTable("schools", "geo_data");
+       var organizations = modelBuilder.Entity<OrganizationEntity>().ToTable("organizations", "geo_data");
 
-       modelBuilder.Entity<CityEntity>().HasMany(x => x.Schools)
+       modelBuilder.Entity<CityEntity>().HasMany(x => x.Organizations)
            .WithOne(x => x.City)
            .HasForeignKey(s => s.CityId)
            .HasPrincipalKey(s => s.Id);
@@ -48,8 +48,8 @@ public class MyGeoDbContext : DbContext
 
     protected void OnSeed(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<SchoolEntity>().HasData(
-            new SchoolEntity
+        modelBuilder.Entity<OrganizationEntity>().HasData(
+            new OrganizationEntity
             {
                 Id = 1,
                 Name = "Крылья",
@@ -69,7 +69,7 @@ public class MyGeoDbContext : DbContext
                 Rating = 5,
                 TwoGisUrl = "https://2gis.com/firm/70000001068931674"
             },
-            new SchoolEntity
+            new OrganizationEntity
             {
                 Id = 2,
                 Name = "Ювента",
@@ -91,7 +91,7 @@ public class MyGeoDbContext : DbContext
             });
     }
     public IQueryable<CityEntity> Cities => Set<CityEntity>();
-    public IQueryable<SchoolEntity> Schools => Set<SchoolEntity>();
+    public IQueryable<OrganizationEntity> Organizations => Set<OrganizationEntity>();
 
 
     internal DbSet<CityEntity> CitiesSet { get; set; }

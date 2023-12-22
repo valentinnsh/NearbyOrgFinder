@@ -7,9 +7,9 @@ namespace Database.Parsers;
 
 public class SchoolDataParser
 {
-    static List<SchoolRecord> ParseCsvFile(string filePath)
+    static List<OrganizationRecord> ParseCsvFile(string filePath)
     {
-        var records = new List<SchoolRecord>();
+        var records = new List<OrganizationRecord>();
         var lines = File.ReadAllLines(filePath);
 
         var headers = Regex.Split(lines[0], ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
@@ -36,7 +36,7 @@ public class SchoolDataParser
         foreach (var line in dataLines)
         {
             var values = Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-            var record = new SchoolRecord
+            var record = new OrganizationRecord
             {
                 Name = values[nameIndex],
                 Description = values[descriptionIndex],
@@ -79,7 +79,7 @@ public class SchoolDataParser
         return geometryFactory.CreatePoint(new Coordinate(longitude, latitude));
     }
 
-    static string GenerateSeedMigration(List<SchoolRecord> records)
+    static string GenerateSeedMigration(List<OrganizationRecord> records)
     {
         var code = new System.Text.StringBuilder();
 
@@ -118,7 +118,7 @@ public class SchoolDataParser
     public static void ParseSchools()
     {
         string filePath = "/home/valentine/dev/MyGeoApp/Data/shools_spb.csv";
-        List<SchoolRecord> records = ParseCsvFile(filePath);
+        List<OrganizationRecord> records = ParseCsvFile(filePath);
         string seedMigration = GenerateSeedMigration(records);
 
         Console.WriteLine(seedMigration);
