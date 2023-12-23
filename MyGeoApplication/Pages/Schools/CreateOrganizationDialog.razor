@@ -32,7 +32,7 @@
     }
 </style>
 
-<RadzenTemplateForm TItem="CreateSchoolModel" Data="@model" Submit="@OnSubmit" class="form-container">
+<RadzenTemplateForm TItem="CreateOrganizationModel" Data="@model" Submit="@OnSubmit" class="form-container">
     <div class="form-row">
         <RadzenLabel Text="@nameof(model.Name)" Style="font-weight: bold"/>
         <RadzenTextBox @bind-Value="@model.Name" />
@@ -59,6 +59,11 @@
         <RadzenLabel Text="City" Style="font-weight: bold"/>
         <RadzenDropDown TValue="long" @ref="_citiesDd" bind-Value="@model.CityId" TextProperty="@nameof(CityEntity.Name)" ValueProperty="@nameof(CityEntity.Id)"Data=@_cities Style="width: 100%; max-width: 400px;"/>
     </div>
+    <div class="form-row">
+        <RadzenLabel Text="OrganizationType" Style="font-weight: bold"/>
+        <RadzenDropDown TValue="OrganizationTypes" Value="@model.Type"
+                        Data="@(Enum.GetValues(typeof(OrganizationTypes)).Cast<Enum>())" Style="width: 100%; max-width: 400px;"/>
+    </div>
     <div class="modal-footer button-container">
         <RadzenButton Text="Close" ButtonStyle="ButtonStyle.Secondary" Click="@OnCancel"/>
         <RadzenButton Text="Save Changes" ButtonType="ButtonType.Submit"/>
@@ -71,9 +76,9 @@
     private CityEntity _selectedCity;
     private RadzenDropDown<long> _citiesDd;
     private IEnumerable<CityEntity> _cities { get; set; }
-    [Inject] ISchoolsService SchoolsService { get; set; }
+    [Inject] IOrganizationsService OrganizationsService { get; set; }
     [Inject] MyGeoDbContext DbContext { get; set; }
-    public CreateSchoolModel model { get; } = new();
+    public CreateOrganizationModel model { get; } = new();
 
     protected async override Task OnInitializedAsync()
     {
@@ -84,7 +89,7 @@
     {
         // binding does not works for some reason - therefore using workaround
         model.CityId = (long)_citiesDd?.GetValue();
-        await SchoolsService.CreateSchoolAsync(model);
+        await OrganizationsService.CreateOrganizationAsync(model);
         _dialogService.Close(model);
     }
 
@@ -96,7 +101,7 @@
     public static async Task<object> OpenAsync(DialogService dialogService)
     {
         _dialogService = dialogService;
-        return await _dialogService.OpenAsync<CreateSchoolDialog>($"Create School",
+        return await _dialogService.OpenAsync<CreateOrganizationDialog>($"Create Organization",
             new Dictionary<string, object>() { },
             new DialogOptions() { Width = "512px", Height = "640px" });
     }

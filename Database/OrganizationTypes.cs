@@ -2,5 +2,6 @@ namespace Database;
 
 public enum OrganizationTypes
 {
-    School
+    School,
+    Pharmacy
 }

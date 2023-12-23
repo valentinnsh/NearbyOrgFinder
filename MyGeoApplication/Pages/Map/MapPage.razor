@@ -10,6 +10,7 @@
 @using Coordinate = OpenLayers.Blazor.Coordinate
 @using Point = NetTopologySuite.Geometries.Point
 @using Database.Entities
+@using Database
 
 <style>
     .marker {
@@ -39,9 +40,10 @@
 <h2>Map of @_name</h2>
 
 <div style="margin-bottom: 10px">
-    <RadzenButton Text="Ближайшая школа" Click="@CalcNearestSchool" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
-    <RadzenButton Text="Школы" ButtonStyle="ButtonStyle.Primary" Click="OnSchoolsValueChanged"/>
-
+    <RadzenButton Text="Ближайшая школа" Click="@(() => CalcNearestOrganization(OrganizationTypes.School))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
+    <RadzenButton Text="Школы" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.School))"/>
+    <RadzenButton Text="Ближайшая аптека" Click="@(() => CalcNearestOrganization(OrganizationTypes.Pharmacy))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
+    <RadzenButton Text="Аптеки" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.Pharmacy))"/>
     <RadzenButton Text="Сборс" ButtonStyle="ButtonStyle.Danger" Click="ResetAsync"/>
 </div>
 
@@ -59,77 +61,82 @@
     </Popup>
 </OpenStreetMap>
 
-<RadzenCard Style="width: 400px" Class="mb-4" Visible="@(_nearestSchool is not null)">
-    <h4 style="text-transform: uppercase; font-weight: bold; color: #3366ff;">
-        @_nearestSchool.Name
-    </h4>
-    <div>
-        <p style="font-weight: bold; color: #100;">
-            Description: 
-        </p>
-        <p>
-            @_nearestSchool.Description
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            Address: 
-        </p>
-        <p>
-            @_nearestSchool.Address
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            Address Comment: 
-        </p>
-        <p>
-            @_nearestSchool.AddressComment
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            Rating:
-        </p>
-        <p>
-            @(_nearestSchool.Rating != null ? _nearestSchool.Rating.ToString() : "")
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            Location: 
-        </p>
-        <p>
-            @(_nearestSchool.Location != null ? _nearestSchool.Location.ToString() : "")
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            Mail Index: 
-        </p>
-        <p>
-            @_nearestSchool.MailIndex
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            District: 
-        </p>
-        <p>
-            @_nearestSchool.District
-        </p>
-        <p style="font-weight: bold; color: #100;">
-            Working Hours: 
-        </p>
-        <p>
-            @_nearestSchool.WorkingHours
-        </p>
-    </div>
-</RadzenCard>
-
+<div style="display: flex; flex-direction: row; align-items: flex-start">
+    @foreach (var type in _nearestOrganization.Keys)
+    {
+        <RadzenCard Style="width: 400px" Class="mb-4" Visible="@(_nearestOrganization[type].Item1 is not null)">
+        <h4 style="text-transform: uppercase; font-weight: bold; color: #3366ff;">
+            @_nearestOrganization[type].Item1.Name
+        </h4>
+        <div>
+            <p style="font-weight: bold; color: #100;">
+                Description:
+            </p>
+            <p>
+                @_nearestOrganization[type].Item1.Description
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                Address:
+            </p>
+            <p>
+                @_nearestOrganization[type].Item1.Address
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                Address Comment:
+            </p>
+            <p>
+                @_nearestOrganization[type].Item1.AddressComment
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                Rating:
+            </p>
+            <p>
+                @(_nearestOrganization[type].Item1.Rating != null ? _nearestOrganization[type].Item1.Rating.ToString() : "")
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                Location:
+            </p>
+            <p>
+                @(_nearestOrganization[type].Item1.Location != null ? _nearestOrganization[type].Item1.Location.ToString() : "")
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                Mail Index:
+            </p>
+            <p>
+                @_nearestOrganization[type].Item1.MailIndex
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                District:
+            </p>
+            <p>
+                @_nearestOrganization[type].Item1.District
+            </p>
+            <p style="font-weight: bold; color: #100;">
+                Working Hours:
+            </p>
+            <p>
+                @_nearestOrganization[type].Item1.WorkingHours
+            </p>
+        </div>
+    </RadzenCard>
+    }
+</div>
 @code{
     [Inject] NotificationService Notifications { get; set; }
     [Inject] ICityService CityService { get; set; }
     [Inject] ISchoolsService SchoolsService { get; set; }
+    [Inject] IPharmaciesService PharmaciesService { get; set; }
+
     
     private Coordinate _center = new(0, 0);
     private OpenStreetMap _map;
     private string? _name;
-    private bool _showSchools;
     private CityInfo _selectedCity;
-    private List<Marker> _schoolsMarkers = new List<Marker>();
     private Marker? _selectedPoint;
-    private RadzenCheckBox<bool> _schoolCheckBox;
-    private Marker? _nearestSchoolMarker;
-    private OrganizationEntity? _nearestSchool;
+
+    private Dictionary<OrganizationTypes, List<Marker>> _markers = new();
+    private Dictionary<OrganizationTypes, bool> _showOrganizations = new();
+    private Dictionary<OrganizationTypes, (OrganizationEntity?, Marker?)> _nearestOrganization = new ();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -137,6 +144,13 @@
         try
         {
             _selectedCity = await CityService.GetCityByIdAsync("00000000-0000-0000-0000-000000000001");
+
+            foreach (var type in Enum.GetValues(typeof(OrganizationTypes)).OfType<OrganizationTypes>().ToArray())
+            {
+                _markers[type] = new List<Marker>();
+                _showOrganizations[type] = false;
+                _nearestOrganization[type] = (null,null);
+            }
             
             _name = _selectedCity.Name;
             _center = new Coordinate(_selectedCity.Center.X, _selectedCity.Center.Y);
@@ -147,42 +161,81 @@
             Notifications.Notify(NotificationSeverity.Error, "Could not get SPB");
             Console.WriteLine(e);
         }
-        _showSchools = true;
-        await ToggleSchoolMarkersAsync();
         await InvokeAsync(StateHasChanged);
     }
 
-    private async Task OnSchoolsValueChanged()
+    private async Task OnShowOrgValueChanged(OrganizationTypes type)
     {
-        _showSchools = !_showSchools;
-        await ToggleSchoolMarkersAsync();
+        _showOrganizations[type] = !_showOrganizations[type];
+        await ToggleOrgMarkersAsync(type);
         await InvokeAsync(StateHasChanged);
     }
-
-    private async Task ToggleSchoolMarkersAsync()
+    
+    private async Task ToggleOrgMarkersAsync(OrganizationTypes type)
     {
-        var schools = await SchoolsService.GetSchoolListByCityId(_selectedCity.ExternalId);
-        if (_showSchools)
+        IEnumerable<OrganizationEntity> orgs;
+        var iconImage = "";
+        switch (type)
         {
-            var markers = schools.Select(s => new Marker(
+            case OrganizationTypes.School:
+                orgs = await SchoolsService.GetSchoolListByCityId(_selectedCity.ExternalId);
+                iconImage = "images/high-school-icon-png.png";
+                break;
+            case OrganizationTypes.Pharmacy:
+                orgs = await PharmaciesService.GetPharmacyListByCityId(_selectedCity.ExternalId);
+                iconImage = "images/pharmacy-icon.png";
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(type), type, null);
+        }
+        if (_showOrganizations[type])
+        {
+            var markers = orgs.Select(s => new Marker(
                 new Coordinate(s.Location.X, s.Location.Y),
-                "images/high-school-icon-png.png", 414, 602, 414, 602)
+                iconImage, 414, 602, 414, 602)
             { Scale = 0.1, Popup = true, Title = s.Name });
             foreach (var marker in markers)
             {
                 _map.MarkersList.Add(marker);
-                _schoolsMarkers.Add(marker);
+                _markers[type].Add(marker);
+                _markers[type].Add(marker);
             }
         }
         else
         {
-            foreach (var marker in _schoolsMarkers)
+            foreach (var marker in _markers[type])
             {
                 _map.MarkersList.Remove(marker);
             }
 
-            _schoolsMarkers = new List<Marker>();
+            _markers[type] = new List<Marker>();
         }
+    }
+    
+    private async Task CalcNearestOrganization(OrganizationTypes type)
+    {
+        string iconImage;
+        OrganizationEntity nearest;
+        switch (type)
+        {
+            case OrganizationTypes.School:
+                nearest = await SchoolsService.GetNearestSchool(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y));
+                iconImage = "images/special-high-school-icon-png.png";
+                break;
+            case OrganizationTypes.Pharmacy:
+                nearest = await PharmaciesService.GetNearestPharmacy(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y));;
+                iconImage = "images/special-pharmacy-icon.png";
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(type), type, null);
+        }
+        if(_nearestOrganization[type].Item2 != null)
+            _map.MarkersList.Remove(_nearestOrganization[type].Item2);
+        _nearestOrganization[type] = (nearest, new Marker(
+            new Coordinate(nearest.Location.X, nearest.Location.Y),
+            iconImage, 414, 602, 414, 602)
+        { Scale = 0.1, Popup = true, Title = nearest.Name });
+        _map.MarkersList.Add(_nearestOrganization[type].Item2);
     }
     
     private async Task OnMapClick(Coordinate coordinate)
@@ -194,28 +247,17 @@
         _map.MarkersList.Add(_selectedPoint);
     }
 
-    private async Task CalcNearestSchool()
-    {
-        _nearestSchool = await SchoolsService.GetNearestSchool(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y));
-        if(_nearestSchoolMarker != null)
-            _map.MarkersList.Remove(_nearestSchoolMarker);
-        _nearestSchoolMarker = new Marker(
-            new Coordinate(_nearestSchool.Location.X, _nearestSchool.Location.Y),
-            "images/special-high-school-icon-png.png", 414, 602, 414, 602)
-        { Scale = 0.1, Popup = true, Title = "Ближайшая школа!" };
-        _map.MarkersList.Add(_nearestSchoolMarker);
-    }
-
     private async Task ResetAsync()
     {
-        // Reset nearest School
-        _map.MarkersList.Remove(_nearestSchoolMarker);
-        _nearestSchool = null;
+        // Reset nearest Organizations
+        foreach (var org in _nearestOrganization)
+        {
+            _map.MarkersList.Remove(org.Value.Item2);
+            _nearestOrganization[org.Key] = (null, null);
+        }
         
         // Delete selected marker
         _map.MarkersList.Remove(_selectedPoint);
         _selectedPoint = null;
-        
-        // StateHasChanged();
     }
 }

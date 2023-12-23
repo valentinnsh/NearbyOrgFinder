@@ -30,6 +30,7 @@ public class MyGeoDbContext : DbContext
         OnCommonModelCreating(builder);
         OnSeed(builder);
         SeedSchools.FullSeedSchools(builder);
+        SeedPharmacy.FullSeedPharmacy(builder);
     }
 
     protected void OnCommonModelCreating(ModelBuilder modelBuilder)
