@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Npgsql;
 using Radzen;
 
+// I know this is kinda cringe, will refactor this in the future with startup and configuration
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MyGeoDbContext>();
