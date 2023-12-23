@@ -141,4 +141,20 @@ public static class DataParser
             writer.Write(seedMigration);
         }
     }
+    
+    public static void GenerateVetsSeeder()
+    {
+        string filePath = "/home/valentine/dev/MyGeoApp/Data/veterinary_spb.csv";
+        List<OrganizationRecord> records = ParseCsvFile(filePath);
+        string seedMigration = GenerateMigration(records, OrganizationTypes.Vet.ToString(), 2257);
+
+        Console.WriteLine(seedMigration);
+
+        string newFilePAth = "/home/valentine/dev/MyGeoApp/Database/SeedVets.cs";
+
+        using (StreamWriter writer = new StreamWriter(newFilePAth))
+        {
+            writer.Write(seedMigration);
+        }
+    }
 }
