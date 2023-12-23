@@ -6,7 +6,6 @@
 @using Radzen.Blazor
 @using MarkerType = OpenLayers.Blazor.MarkerType
 @using MyGeoApplication.Data
-@using NetTopologySuite.Geometries
 @using Coordinate = OpenLayers.Blazor.Coordinate
 @using Point = NetTopologySuite.Geometries.Point
 @using Database.Entities
@@ -44,6 +43,8 @@
     <RadzenButton Text="Школы" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.School))"/>
     <RadzenButton Text="Ближайшая аптека" Click="@(() => CalcNearestOrganization(OrganizationTypes.Pharmacy))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
     <RadzenButton Text="Аптеки" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.Pharmacy))"/>
+    <RadzenButton Text="Ближайшая Ветклиника" Click="@(() => CalcNearestOrganization(OrganizationTypes.Vet))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
+    <RadzenButton Text="Ветклиники" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.Vet))"/>
     <RadzenButton Text="Сборс" ButtonStyle="ButtonStyle.Danger" Click="ResetAsync"/>
 </div>
 
@@ -126,7 +127,7 @@
     [Inject] ICityService CityService { get; set; }
     [Inject] ISchoolsService SchoolsService { get; set; }
     [Inject] IPharmaciesService PharmaciesService { get; set; }
-
+    [Inject] IOrganizationsService OrganizationsService { get; set; }
     
     private Coordinate _center = new(0, 0);
     private OpenStreetMap _map;
@@ -185,6 +186,10 @@
                 orgs = await PharmaciesService.GetPharmacyListByCityId(_selectedCity.ExternalId);
                 iconImage = "images/pharmacy-icon.png";
                 break;
+            case OrganizationTypes.Vet:
+                orgs = await OrganizationsService.GetOrganizationListByCityId(_selectedCity.ExternalId, OrganizationTypes.Vet);
+                iconImage = "images/vet-icon.png";
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
@@ -197,7 +202,6 @@
             foreach (var marker in markers)
             {
                 _map.MarkersList.Add(marker);
-                _markers[type].Add(marker);
                 _markers[type].Add(marker);
             }
         }
@@ -225,6 +229,10 @@
             case OrganizationTypes.Pharmacy:
                 nearest = await PharmaciesService.GetNearestPharmacy(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y));;
                 iconImage = "images/special-pharmacy-icon.png";
+                break;
+            case OrganizationTypes.Vet:
+                nearest = await OrganizationsService.GetNearestOrganization(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y), OrganizationTypes.Vet);
+                iconImage = "images/vet-icon-special.png";
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
