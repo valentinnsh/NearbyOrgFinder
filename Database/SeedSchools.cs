@@ -9,7 +9,7 @@ public static class SeedSchools
 {
     public static void FullSeedSchools(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<SchoolEntity>().HasData(
+        modelBuilder.Entity<OrganizationEntity>().HasData(
     new
     {
         Id = 3L,
@@ -27,6 +27,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001044937287"
     },
     new
@@ -46,6 +47,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841472631"
     },
     new
@@ -65,6 +67,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-20:00",
         Timezone = "+03:00",
         Rating = 3.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001033760435"
     },
     new
@@ -84,6 +87,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001056000973"
     },
     new
@@ -103,6 +107,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:45-19:30; Вт: 08:45-19:30; Ср: 08:45-19:30; Чт: 08:45-19:30; Пт: 08:45-19:30; Сб: 08:45-19:30",
         Timezone = "+03:00",
         Rating = 4.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001038757823"
     },
     new
@@ -122,6 +127,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001044841719"
     },
     new
@@ -141,6 +147,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674195"
     },
     new
@@ -160,6 +167,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001028940160"
     },
     new
@@ -179,6 +187,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-22:00; Вт: 08:00-22:00; Ср: 08:00-22:00; Чт: 08:00-22:00; Пт: 08:00-22:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696840"
     },
     new
@@ -198,6 +207,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689587"
     },
     new
@@ -216,6 +226,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-21:00; Вт: 08:30-21:00; Ср: 08:30-21:00; Чт: 08:30-21:00; Пт: 08:30-21:00; Сб: 08:30-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838704078"
     },
     new
@@ -234,6 +245,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001007201537"
     },
     new
@@ -253,6 +265,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689751"
     },
     new
@@ -272,6 +285,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718948"
     },
     new
@@ -290,6 +304,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700581"
     },
     new
@@ -309,6 +324,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715581"
     },
     new
@@ -328,6 +344,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 4.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693287"
     },
     new
@@ -347,6 +364,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-15:55; Вт: 09:00-15:55; Ср: 09:00-15:55; Чт: 09:00-15:55; Пт: 09:00-15:55; Сб: 09:00-15:55",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001039067377"
     },
     new
@@ -366,6 +384,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-17:00; Вт: 08:30-17:00; Ср: 08:30-17:00; Чт: 08:30-17:00; Пт: 08:30-17:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001032020911"
     },
     new
@@ -384,6 +403,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001078995269"
     },
     new
@@ -403,6 +423,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693293"
     },
     new
@@ -422,6 +443,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700840"
     },
     new
@@ -441,6 +463,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700849"
     },
     new
@@ -460,6 +483,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719027"
     },
     new
@@ -479,6 +503,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838701008"
     },
     new
@@ -498,6 +523,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 3.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700644"
     },
     new
@@ -517,6 +543,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693394"
     },
     new
@@ -535,6 +562,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838712103"
     },
     new
@@ -554,6 +582,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:15-19:00; Вт: 08:15-19:00; Ср: 08:15-19:00; Чт: 08:15-19:00; Пт: 08:15-19:00; Сб: 08:15-16:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693059"
     },
     new
@@ -573,6 +602,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 10:00-14:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001052069304"
     },
     new
@@ -592,6 +622,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-21:00; Вт: 08:30-21:00; Ср: 08:30-21:00; Чт: 08:30-21:00; Пт: 08:30-21:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 3.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693072"
     },
     new
@@ -611,6 +642,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-22:00; Вт: 08:30-22:00; Ср: 08:30-22:00; Чт: 08:30-22:00; Пт: 08:30-22:00; Сб: 08:30-22:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693338"
     },
     new
@@ -630,6 +662,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 1.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689739"
     },
     new
@@ -649,6 +682,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838701193"
     },
     new
@@ -668,6 +702,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838701173"
     },
     new
@@ -686,6 +721,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700897"
     },
     new
@@ -705,6 +741,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714933"
     },
     new
@@ -724,6 +761,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:15-18:00; Вт: 09:15-18:00; Ср: 09:15-18:00; Чт: 09:15-18:00; Пт: 09:15-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838725892"
     },
     new
@@ -743,6 +781,7 @@ public static class SeedSchools
         WorkingHours = "",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001077494392"
     },
     new
@@ -762,6 +801,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 1.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838701169"
     },
     new
@@ -781,6 +821,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714941"
     },
     new
@@ -800,6 +841,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689509"
     },
     new
@@ -819,6 +861,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840547602"
     },
     new
@@ -838,6 +881,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001045141101"
     },
     new
@@ -857,6 +901,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 10:00-20:00; Вт: 10:00-20:00; Ср: 10:00-20:00; Чт: 10:00-20:00; Пт: 10:00-20:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718697"
     },
     new
@@ -876,6 +921,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839979671"
     },
     new
@@ -895,6 +941,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682040"
     },
     new
@@ -914,6 +961,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Вс: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693499"
     },
     new
@@ -933,6 +981,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674254"
     },
     new
@@ -952,6 +1001,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676365"
     },
     new
@@ -971,6 +1021,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838502666"
     },
     new
@@ -990,6 +1041,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693514"
     },
     new
@@ -1009,6 +1061,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676410"
     },
     new
@@ -1027,6 +1080,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-15:00; Вс: 08:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001037495040"
     },
     new
@@ -1045,6 +1099,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841227108"
     },
     new
@@ -1064,6 +1119,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674225"
     },
     new
@@ -1083,6 +1139,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-16:30; Вт: 08:30-16:30; Ср: 08:30-16:30; Чт: 08:30-16:30; Пт: 08:30-16:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001007438678"
     },
     new
@@ -1102,6 +1159,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693529"
     },
     new
@@ -1120,6 +1178,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048159828"
     },
     new
@@ -1138,6 +1197,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:30-19:00; Вт: 09:30-19:00; Ср: 09:30-19:00; Чт: 09:30-19:00; Пт: 09:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715575"
     },
     new
@@ -1157,6 +1217,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674435"
     },
     new
@@ -1175,6 +1236,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 10:00-18:00; Вт: 10:00-18:00; Ср: 10:00-18:00; Чт: 10:00-18:00; Пт: 10:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001024943472"
     },
     new
@@ -1194,6 +1256,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838706806"
     },
     new
@@ -1212,6 +1275,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838625007"
     },
     new
@@ -1231,6 +1295,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 3.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689545"
     },
     new
@@ -1250,6 +1315,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838725922"
     },
     new
@@ -1269,6 +1335,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-14:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693068"
     },
     new
@@ -1288,6 +1355,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-13:00, 14:00-18:00; Вт: 09:00-13:00, 14:00-18:00; Ср: 09:00-13:00, 14:00-18:00; Чт: 09:00-13:00, 14:00-18:00; Пт: 09:00-13:00, 14:00-18:00",
         Timezone = "+03:00",
         Rating = 3.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001021194761"
     },
     new
@@ -1307,6 +1375,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-22:00; Вт: 08:00-22:00; Ср: 08:00-22:00; Чт: 08:00-22:00; Пт: 08:00-22:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700863"
     },
     new
@@ -1326,6 +1395,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:30-19:45; Вт: 09:30-19:45; Ср: 09:30-19:45; Чт: 09:30-19:45; Пт: 09:30-19:45; Сб: 09:30-16:05",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838706856"
     },
     new
@@ -1345,6 +1415,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00; Сб: 08:30-15:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838681940"
     },
     new
@@ -1364,6 +1435,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700979"
     },
     new
@@ -1383,6 +1455,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838701098"
     },
     new
@@ -1402,6 +1475,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 4.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678378"
     },
     new
@@ -1421,6 +1495,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693012"
     },
     new
@@ -1440,6 +1515,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700353"
     },
     new
@@ -1458,6 +1534,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714552"
     },
     new
@@ -1476,6 +1553,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001038897705"
     },
     new
@@ -1495,6 +1573,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-17:15; Вт: 08:30-17:15; Ср: 08:30-17:15; Чт: 08:30-17:15; Пт: 08:30-17:15",
         Timezone = "+03:00",
         Rating = 4.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700022"
     },
     new
@@ -1513,6 +1592,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-15:40; Вт: 09:00-15:40; Ср: 09:00-15:40; Чт: 09:00-15:40; Пт: 09:00-15:40",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718411"
     },
     new
@@ -1532,6 +1612,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001022944248"
     },
     new
@@ -1551,6 +1632,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693057"
     },
     new
@@ -1570,6 +1652,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689550"
     },
     new
@@ -1589,6 +1672,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700970"
     },
     new
@@ -1608,6 +1692,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 2.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700791"
     },
     new
@@ -1627,6 +1712,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-15:35; Вт: 08:00-15:35; Ср: 08:00-15:35; Чт: 08:00-15:35; Пт: 08:00-15:35",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700047"
     },
     new
@@ -1646,6 +1732,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-21:00; Вт: 09:00-21:00; Ср: 09:00-21:00; Чт: 09:00-21:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838624901"
     },
     new
@@ -1664,6 +1751,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718714"
     },
     new
@@ -1683,6 +1771,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714643"
     },
     new
@@ -1702,6 +1791,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079110244"
     },
     new
@@ -1721,6 +1811,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 2.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693015"
     },
     new
@@ -1739,6 +1830,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674436"
     },
     new
@@ -1758,6 +1850,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:30-19:00; Вт: 07:30-19:00; Ср: 07:30-19:00; Чт: 07:30-19:00; Пт: 07:30-19:00",
         Timezone = "+03:00",
         Rating = 2.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001027385701"
     },
     new
@@ -1777,6 +1870,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 1.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838706814"
     },
     new
@@ -1795,6 +1889,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:30; Вт: 09:00-18:30; Ср: 09:00-18:30; Чт: 09:00-18:30; Пт: 09:00-18:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693078"
     },
     new
@@ -1814,6 +1909,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682026"
     },
     new
@@ -1833,6 +1929,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 2.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693155"
     },
     new
@@ -1851,6 +1948,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693304"
     },
     new
@@ -1869,6 +1967,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-18:30; Вт: 08:30-18:30; Ср: 08:30-18:30; Чт: 08:30-18:30; Пт: 08:30-18:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001020804925"
     },
     new
@@ -1888,6 +1987,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 10:00-17:00",
         Timezone = "+03:00",
         Rating = 3.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838711781"
     },
     new
@@ -1907,6 +2007,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-21:00; Вт: 09:00-21:00; Ср: 09:00-21:00; Чт: 09:00-21:00; Пт: 09:00-21:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001053600622"
     },
     new
@@ -1926,6 +2027,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:15; Вт: 08:30-20:15; Ср: 08:30-20:15; Чт: 08:30-20:15; Пт: 08:30-16:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700554"
     },
     new
@@ -1945,6 +2047,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689685"
     },
     new
@@ -1964,6 +2067,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 3.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838891558"
     },
     new
@@ -1983,6 +2087,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697199"
     },
     new
@@ -2002,6 +2107,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689620"
     },
     new
@@ -2021,6 +2127,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:45; Вт: 09:00-17:45; Ср: 09:00-17:45; Чт: 09:00-17:45; Пт: 09:00-17:45",
         Timezone = "+03:00",
         Rating = 3.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697181"
     },
     new
@@ -2040,6 +2147,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:30-13:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689692"
     },
     new
@@ -2058,6 +2166,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689712"
     },
     new
@@ -2076,6 +2185,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838699964"
     },
     new
@@ -2095,6 +2205,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696740"
     },
     new
@@ -2113,6 +2224,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079651910"
     },
     new
@@ -2132,6 +2244,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-14:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838651979"
     },
     new
@@ -2151,6 +2264,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696808"
     },
     new
@@ -2170,6 +2284,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692943"
     },
     new
@@ -2189,6 +2304,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001018872730"
     },
     new
@@ -2208,6 +2324,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 11:00-15:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700034"
     },
     new
@@ -2227,6 +2344,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-17:00; Вт: 08:00-17:00; Ср: 08:00-17:00; Чт: 08:00-17:00; Пт: 08:00-17:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674588"
     },
     new
@@ -2245,6 +2363,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 16:00-19:00; Вт: 16:00-19:00; Ср: 16:00-19:00; Чт: 16:00-19:00; Пт: 16:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838712979"
     },
     new
@@ -2264,6 +2383,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 3.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838685902"
     },
     new
@@ -2283,6 +2403,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718661"
     },
     new
@@ -2302,6 +2423,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676521"
     },
     new
@@ -2321,6 +2443,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692982"
     },
     new
@@ -2340,6 +2463,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840705232"
     },
     new
@@ -2359,6 +2483,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840002782"
     },
     new
@@ -2378,6 +2503,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692929"
     },
     new
@@ -2396,6 +2522,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Вс: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001030073688"
     },
     new
@@ -2414,6 +2541,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718603"
     },
     new
@@ -2433,6 +2561,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-17:00; Вт: 08:00-17:00; Ср: 08:00-17:00; Чт: 08:00-17:00; Пт: 08:00-17:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001041136680"
     },
     new
@@ -2452,6 +2581,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696754"
     },
     new
@@ -2471,6 +2601,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:30; Вт: 09:00-19:30; Ср: 09:00-19:30; Чт: 09:00-19:30; Пт: 09:00-19:30",
         Timezone = "+03:00",
         Rating = 1.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714541"
     },
     new
@@ -2490,6 +2621,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686132"
     },
     new
@@ -2509,6 +2641,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001035455233"
     },
     new
@@ -2527,6 +2660,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714603"
     },
     new
@@ -2546,6 +2680,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-15:00; Вт: 08:30-15:00; Ср: 08:30-15:00; Чт: 08:30-15:00; Пт: 08:30-15:00; Сб: 08:30-14:15",
         Timezone = "+03:00",
         Rating = 4.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001006816926"
     },
     new
@@ -2564,6 +2699,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 10:00-18:00; Вт: 10:00-18:00; Ср: 10:00-18:00; Чт: 10:00-18:00; Пт: 10:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838629723"
     },
     new
@@ -2583,6 +2719,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838695101"
     },
     new
@@ -2602,6 +2739,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838699996"
     },
     new
@@ -2621,6 +2759,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674421"
     },
     new
@@ -2640,6 +2779,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693573"
     },
     new
@@ -2659,6 +2799,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:45-19:30; Вт: 08:45-19:30; Ср: 08:45-19:30; Чт: 08:45-19:30; Пт: 08:45-19:30; Сб: 08:45-19:30",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838656868"
     },
     new
@@ -2678,6 +2819,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678888"
     },
     new
@@ -2697,6 +2839,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838711651"
     },
     new
@@ -2716,6 +2859,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:30; Вт: 08:00-19:30; Ср: 08:00-19:30; Чт: 08:00-19:30; Пт: 08:00-19:30; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 4.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838598773"
     },
     new
@@ -2735,6 +2879,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693055"
     },
     new
@@ -2754,6 +2899,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674516"
     },
     new
@@ -2773,6 +2919,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 1.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686109"
     },
     new
@@ -2792,6 +2939,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682298"
     },
     new
@@ -2811,6 +2959,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692521"
     },
     new
@@ -2829,6 +2978,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686035"
     },
     new
@@ -2848,6 +2998,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692410"
     },
     new
@@ -2867,6 +3018,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838706693"
     },
     new
@@ -2886,6 +3038,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001064253766"
     },
     new
@@ -2905,6 +3058,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001029000489"
     },
     new
@@ -2924,6 +3078,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674664"
     },
     new
@@ -2942,6 +3097,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838699999"
     },
     new
@@ -2961,6 +3117,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700313"
     },
     new
@@ -2980,6 +3137,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-21:00; Вт: 08:30-21:00; Ср: 08:30-21:00; Чт: 08:30-21:00; Пт: 08:30-21:00; Сб: 08:30-21:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700217"
     },
     new
@@ -2998,6 +3156,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838725829"
     },
     new
@@ -3017,6 +3176,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-21:30; Вт: 08:30-21:30; Ср: 08:30-21:30; Чт: 08:30-21:30; Пт: 08:30-21:30; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700409"
     },
     new
@@ -3036,6 +3196,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700016"
     },
     new
@@ -3055,6 +3216,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:30; Вт: 08:00-19:30; Ср: 08:00-19:30; Чт: 08:00-19:30; Пт: 08:00-19:30; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 4.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700661"
     },
     new
@@ -3074,6 +3236,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 4.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693545"
     },
     new
@@ -3092,6 +3255,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838675434"
     },
     new
@@ -3111,6 +3275,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 3.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838598610"
     },
     new
@@ -3130,6 +3295,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692961"
     },
     new
@@ -3149,6 +3315,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697263"
     },
     new
@@ -3168,6 +3335,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700240"
     },
     new
@@ -3187,6 +3355,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 2.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696785"
     },
     new
@@ -3206,6 +3375,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 1.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839969803"
     },
     new
@@ -3225,6 +3395,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700785"
     },
     new
@@ -3244,6 +3415,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693599"
     },
     new
@@ -3263,6 +3435,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674261"
     },
     new
@@ -3282,6 +3455,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001035289410"
     },
     new
@@ -3301,6 +3475,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-15:35",
         Timezone = "+03:00",
         Rating = 3.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674240"
     },
     new
@@ -3320,6 +3495,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 4.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001033447034"
     },
     new
@@ -3339,6 +3515,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678388"
     },
     new
@@ -3358,6 +3535,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677530"
     },
     new
@@ -3377,6 +3555,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 4.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001019386439"
     },
     new
@@ -3396,6 +3575,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-15:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682208"
     },
     new
@@ -3415,6 +3595,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-21:00; Вт: 09:00-21:00; Ср: 09:00-21:00; Чт: 09:00-21:00; Пт: 09:00-21:00; Сб: 09:00-21:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678420"
     },
     new
@@ -3434,6 +3615,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:20-16:20; Вт: 09:20-16:20; Ср: 09:20-16:20; Чт: 09:20-16:20; Пт: 09:20-16:20",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838717294"
     },
     new
@@ -3453,6 +3635,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:45; Вт: 08:00-18:45; Ср: 08:00-18:45; Чт: 08:00-18:45; Пт: 08:00-18:45; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 4.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689610"
     },
     new
@@ -3472,6 +3655,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00; Сб: 07:00-16:00",
         Timezone = "+03:00",
         Rating = 3.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001038941549"
     },
     new
@@ -3491,6 +3675,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-15:20; Вт: 09:00-15:20; Ср: 09:00-15:20; Чт: 09:00-15:20; Пт: 09:00-15:20",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696787"
     },
     new
@@ -3510,6 +3695,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:30; Вт: 09:00-20:30; Ср: 09:00-20:30; Чт: 09:00-20:30; Пт: 09:00-20:30; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696744"
     },
     new
@@ -3529,6 +3715,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:30; Вт: 08:30-18:30; Ср: 08:30-18:30; Чт: 08:30-18:30; Пт: 08:30-18:30",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838701206"
     },
     new
@@ -3548,6 +3735,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:30-20:00; Вт: 07:30-20:00; Ср: 07:30-20:00; Чт: 07:30-20:00; Пт: 07:30-20:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677294"
     },
     new
@@ -3567,6 +3755,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838649946"
     },
     new
@@ -3586,6 +3775,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693064"
     },
     new
@@ -3605,6 +3795,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700165"
     },
     new
@@ -3624,6 +3815,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839899475"
     },
     new
@@ -3643,6 +3835,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678787"
     },
     new
@@ -3662,6 +3855,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:30; Вт: 08:30-18:30; Ср: 08:30-18:30; Чт: 08:30-18:30; Пт: 08:30-18:30; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678823"
     },
     new
@@ -3680,6 +3874,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001065515531"
     },
     new
@@ -3699,6 +3894,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715228"
     },
     new
@@ -3717,6 +3913,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079868799"
     },
     new
@@ -3736,6 +3933,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678712"
     },
     new
@@ -3755,6 +3953,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 3.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001022234286"
     },
     new
@@ -3773,6 +3972,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048161892"
     },
     new
@@ -3792,6 +3992,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-13:00, 14:00-18:00; Вт: 09:00-13:00, 14:00-18:00; Ср: 09:00-13:00, 14:00-18:00; Чт: 09:00-13:00, 14:00-18:00; Пт: 09:00-13:00, 14:00-18:00",
         Timezone = "+03:00",
         Rating = 3.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001044300467"
     },
     new
@@ -3811,6 +4012,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676596"
     },
     new
@@ -3829,6 +4031,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001064576505"
     },
     new
@@ -3848,6 +4051,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715535"
     },
     new
@@ -3867,6 +4071,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678796"
     },
     new
@@ -3886,6 +4091,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 3.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001033455078"
     },
     new
@@ -3905,6 +4111,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692960"
     },
     new
@@ -3924,6 +4131,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678303"
     },
     new
@@ -3943,6 +4151,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-15:35",
         Timezone = "+03:00",
         Rating = 3.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678465"
     },
     new
@@ -3962,6 +4171,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 3.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689519"
     },
     new
@@ -3980,6 +4190,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001017478407"
     },
     new
@@ -3998,6 +4209,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-15:25",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692994"
     },
     new
@@ -4017,6 +4229,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692999"
     },
     new
@@ -4036,6 +4249,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 4.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838670709"
     },
     new
@@ -4055,6 +4269,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 10:00-18:00; Вт: 10:00-18:00; Ср: 10:00-18:00; Чт: 10:00-18:00; Пт: 10:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840731679"
     },
     new
@@ -4074,6 +4289,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689678"
     },
     new
@@ -4093,6 +4309,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 1.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693598"
     },
     new
@@ -4112,6 +4329,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 1.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838726173"
     },
     new
@@ -4131,6 +4349,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676843"
     },
     new
@@ -4150,6 +4369,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838681130"
     },
     new
@@ -4168,6 +4388,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715607"
     },
     new
@@ -4187,6 +4408,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 1.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697269"
     },
     new
@@ -4206,6 +4428,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001028962688"
     },
     new
@@ -4225,6 +4448,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696745"
     },
     new
@@ -4244,6 +4468,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-21:00; Вт: 09:00-21:00; Ср: 09:00-21:00; Чт: 09:00-21:00; Пт: 09:00-21:00; Сб: 11:00-16:00; Вс: 11:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001066381010"
     },
     new
@@ -4263,6 +4488,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838785418"
     },
     new
@@ -4282,6 +4508,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:30; Вт: 08:00-19:30; Ср: 08:00-19:30; Чт: 08:00-19:30; Пт: 08:00-19:30",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696829"
     },
     new
@@ -4301,6 +4528,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689437"
     },
     new
@@ -4319,6 +4547,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697248"
     },
     new
@@ -4338,6 +4567,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-17:00; Вт: 08:00-17:00; Ср: 08:00-17:00; Чт: 08:00-17:00; Пт: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841677917"
     },
     new
@@ -4356,6 +4586,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00; Вс: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001082363863"
     },
     new
@@ -4375,6 +4606,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 1.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693052"
     },
     new
@@ -4394,6 +4626,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693355"
     },
     new
@@ -4413,6 +4646,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838713895"
     },
     new
@@ -4432,6 +4666,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696726"
     },
     new
@@ -4451,6 +4686,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838890923"
     },
     new
@@ -4470,6 +4706,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693112"
     },
     new
@@ -4489,6 +4726,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692932"
     },
     new
@@ -4507,6 +4745,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677722"
     },
     new
@@ -4526,6 +4765,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693036"
     },
     new
@@ -4545,6 +4785,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682051"
     },
     new
@@ -4564,6 +4805,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:15-18:00; Вт: 08:15-18:00; Ср: 08:15-18:00; Чт: 08:15-18:00; Пт: 08:15-18:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678872"
     },
     new
@@ -4583,6 +4825,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-22:00; Вт: 08:00-22:00; Ср: 08:00-22:00; Чт: 08:00-22:00; Пт: 08:00-22:00; Сб: 10:00-15:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840756496"
     },
     new
@@ -4602,6 +4845,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692953"
     },
     new
@@ -4621,6 +4865,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001063394343"
     },
     new
@@ -4640,6 +4885,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00; Сб: 09:00-15:45",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838681968"
     },
     new
@@ -4659,6 +4905,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682019"
     },
     new
@@ -4678,6 +4925,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001017610003"
     },
     new
@@ -4697,6 +4945,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-19:00; Сб: 09:00-14:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001020656079"
     },
     new
@@ -4715,6 +4964,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-14:35; Вт: 09:00-14:35; Ср: 09:00-14:35; Чт: 09:00-14:35; Пт: 09:00-14:35; Сб: 09:00-14:35",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692974"
     },
     new
@@ -4734,6 +4984,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00; Сб: 08:30-14:00",
         Timezone = "+03:00",
         Rating = 4.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693313"
     },
     new
@@ -4752,6 +5003,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838655973"
     },
     new
@@ -4771,6 +5023,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840953662"
     },
     new
@@ -4790,6 +5043,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001043761962"
     },
     new
@@ -4809,6 +5063,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-15:10; Вт: 08:30-15:10; Ср: 08:30-15:10; Чт: 08:30-15:10; Пт: 08:30-15:10; Сб: 08:30-15:10",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692926"
     },
     new
@@ -4827,6 +5082,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 10:00-21:00; Вт: 10:00-21:00; Ср: 10:00-21:00; Чт: 10:00-21:00; Пт: 10:00-21:00; Сб: 10:00-21:00; Вс: 10:00-21:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001077228914"
     },
     new
@@ -4845,6 +5101,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-16:00; Вт: 08:00-16:00; Ср: 08:00-16:00; Чт: 08:00-16:00; Пт: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840961554"
     },
     new
@@ -4863,6 +5120,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:30; Вт: 09:00-19:30; Ср: 09:00-19:30; Чт: 09:00-19:30; Пт: 09:00-19:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689364"
     },
     new
@@ -4882,6 +5140,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 1.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692990"
     },
     new
@@ -4901,6 +5160,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:30-14:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838694372"
     },
     new
@@ -4920,6 +5180,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001030573188"
     },
     new
@@ -4939,6 +5200,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841199491"
     },
     new
@@ -4958,6 +5220,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838602555"
     },
     new
@@ -4977,6 +5240,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 4.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696727"
     },
     new
@@ -4996,6 +5260,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-17:30; Вт: 08:30-17:30; Ср: 08:30-17:30; Чт: 08:30-17:30; Пт: 08:30-17:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674525"
     },
     new
@@ -5015,6 +5280,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718877"
     },
     new
@@ -5034,6 +5300,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693456"
     },
     new
@@ -5053,6 +5320,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715619"
     },
     new
@@ -5072,6 +5340,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-15:00, 16:00-20:00; Вт: 09:00-15:00, 16:00-20:00; Ср: 09:00-15:00, 16:00-20:00; Чт: 09:00-15:00, 16:00-20:00; Пт: 09:00-15:00, 16:00-20:00",
         Timezone = "+03:00",
         Rating = 2.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838711959"
     },
     new
@@ -5091,6 +5360,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-13:00, 14:00-18:00; Вт: 09:00-13:00, 14:00-18:00; Ср: 09:00-13:00, 14:00-18:00; Чт: 09:00-13:00, 14:00-18:00; Пт: 09:00-13:00, 14:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693105"
     },
     new
@@ -5110,6 +5380,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:30",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838699529"
     },
     new
@@ -5129,6 +5400,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-16:00; Вт: 08:30-16:00; Ср: 08:30-16:00; Чт: 08:30-16:00; Пт: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693006"
     },
     new
@@ -5148,6 +5420,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686263"
     },
     new
@@ -5167,6 +5440,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00; Вс: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001063594066"
     },
     new
@@ -5186,6 +5460,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696771"
     },
     new
@@ -5204,6 +5479,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001018783483"
     },
     new
@@ -5223,6 +5499,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 2.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677275"
     },
     new
@@ -5242,6 +5519,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718767"
     },
     new
@@ -5261,6 +5539,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001077038918"
     },
     new
@@ -5280,6 +5559,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839969978"
     },
     new
@@ -5299,6 +5579,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001007144961"
     },
     new
@@ -5318,6 +5599,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001043704960"
     },
     new
@@ -5337,6 +5619,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 4.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689526"
     },
     new
@@ -5356,6 +5639,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 4.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692498"
     },
     new
@@ -5374,6 +5658,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682083"
     },
     new
@@ -5393,6 +5678,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 2.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696798"
     },
     new
@@ -5412,6 +5698,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 4.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001035595056"
     },
     new
@@ -5431,6 +5718,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:30; Вт: 09:00-17:30; Ср: 09:00-17:30; Чт: 09:00-17:30; Пт: 09:00-17:30; Сб: 09:00-14:40",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001029062067"
     },
     new
@@ -5449,6 +5737,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678834"
     },
     new
@@ -5468,6 +5757,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696918"
     },
     new
@@ -5487,6 +5777,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838629752"
     },
     new
@@ -5506,6 +5797,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677573"
     },
     new
@@ -5525,6 +5817,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696807"
     },
     new
@@ -5543,6 +5836,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674642"
     },
     new
@@ -5562,6 +5856,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:30-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686405"
     },
     new
@@ -5581,6 +5876,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678003"
     },
     new
@@ -5600,6 +5896,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678444"
     },
     new
@@ -5619,6 +5916,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838681945"
     },
     new
@@ -5638,6 +5936,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:30-15:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686026"
     },
     new
@@ -5657,6 +5956,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696790"
     },
     new
@@ -5676,6 +5976,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678426"
     },
     new
@@ -5695,6 +5996,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:15-19:45; Вт: 08:15-19:45; Ср: 08:15-19:45; Чт: 08:15-19:45; Пт: 08:15-19:45; Сб: 08:15-19:45",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682012"
     },
     new
@@ -5714,6 +6016,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:50; Вт: 08:00-20:50; Ср: 08:00-20:50; Чт: 08:00-20:50; Пт: 08:00-20:50; Сб: 08:00-18:30; Вс: 08:00-18:30",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689703"
     },
     new
@@ -5733,6 +6036,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689363"
     },
     new
@@ -5752,6 +6056,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 2.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838706748"
     },
     new
@@ -5771,6 +6076,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001025018215"
     },
     new
@@ -5790,6 +6096,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-20:00; Вс: 09:00-20:00",
         Timezone = "+03:00",
         Rating = 4.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696789"
     },
     new
@@ -5808,6 +6115,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001058993360"
     },
     new
@@ -5826,6 +6134,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693130"
     },
     new
@@ -5844,6 +6153,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840002673"
     },
     new
@@ -5862,6 +6172,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692972"
     },
     new
@@ -5881,6 +6192,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 1.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001033873144"
     },
     new
@@ -5899,6 +6211,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840718715"
     },
     new
@@ -5917,6 +6230,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001041177441"
     },
     new
@@ -5936,6 +6250,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:45; Вт: 08:00-19:45; Ср: 08:00-19:45; Чт: 08:00-19:45; Пт: 08:00-19:45; Сб: 08:00-19:45",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693000"
     },
     new
@@ -5955,6 +6270,7 @@ public static class SeedSchools
         WorkingHours = "",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001078988541"
     },
     new
@@ -5974,6 +6290,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 2.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677373"
     },
     new
@@ -5993,6 +6310,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718691"
     },
     new
@@ -6011,6 +6329,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001061512883"
     },
     new
@@ -6030,6 +6349,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:30-14:00; Вт: 07:30-14:00; Ср: 07:30-14:00; Чт: 07:30-14:00; Пт: 07:30-14:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079103188"
     },
     new
@@ -6049,6 +6369,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696774"
     },
     new
@@ -6068,6 +6389,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:30; Вт: 08:30-19:30; Ср: 08:30-19:30; Чт: 08:30-19:30; Пт: 08:30-19:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838713117"
     },
     new
@@ -6087,6 +6409,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001054288812"
     },
     new
@@ -6106,6 +6429,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 2.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079127119"
     },
     new
@@ -6125,6 +6449,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696833"
     },
     new
@@ -6144,6 +6469,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700061"
     },
     new
@@ -6163,6 +6489,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689867"
     },
     new
@@ -6182,6 +6509,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700942"
     },
     new
@@ -6201,6 +6529,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692998"
     },
     new
@@ -6220,6 +6549,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689887"
     },
     new
@@ -6239,6 +6569,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838685861"
     },
     new
@@ -6258,6 +6589,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838685876"
     },
     new
@@ -6276,6 +6608,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674181"
     },
     new
@@ -6295,6 +6628,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001021807478"
     },
     new
@@ -6314,6 +6648,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00; Вс: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001066424969"
     },
     new
@@ -6333,6 +6668,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689846"
     },
     new
@@ -6352,6 +6688,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693008"
     },
     new
@@ -6370,6 +6707,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:45; Вт: 08:00-20:45; Ср: 08:00-20:45; Чт: 08:00-20:45; Пт: 08:00-20:45",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838685602"
     },
     new
@@ -6389,6 +6727,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-14:40; Вт: 09:00-14:40; Ср: 09:00-14:40; Чт: 09:00-14:40; Пт: 09:00-14:40; Сб: 09:00-14:40",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838691989"
     },
     new
@@ -6408,6 +6747,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-19:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689811"
     },
     new
@@ -6426,6 +6766,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 14:00-18:00; Вт: 14:00-18:00; Ср: 14:00-18:00; Чт: 14:00-18:00; Пт: 14:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700416"
     },
     new
@@ -6444,6 +6785,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-14:05, 14:30-18:30; Вт: 08:30-14:05, 14:30-18:30; Ср: 08:30-14:05, 14:30-18:30; Чт: 08:30-14:05, 14:30-18:30; Пт: 08:30-14:05, 14:30-18:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840999743"
     },
     new
@@ -6463,6 +6805,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 1.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676995"
     },
     new
@@ -6482,6 +6825,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-13:00, 14:00-18:00; Вт: 09:00-13:00, 14:00-18:00; Ср: 09:00-13:00, 14:00-18:00; Чт: 09:00-13:00, 14:00-18:00; Пт: 09:00-13:00, 14:00-18:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001062511901"
     },
     new
@@ -6501,6 +6845,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840193170"
     },
     new
@@ -6520,6 +6865,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 3.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677344"
     },
     new
@@ -6538,6 +6884,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689312"
     },
     new
@@ -6557,6 +6904,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:30-19:00; Вс: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001074540434"
     },
     new
@@ -6576,6 +6924,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677987"
     },
     new
@@ -6594,6 +6943,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692782"
     },
     new
@@ -6613,6 +6963,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840729125"
     },
     new
@@ -6632,6 +6983,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-16:05; Вт: 09:00-16:05; Ср: 09:00-16:05; Чт: 09:00-16:05; Пт: 09:00-16:05",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692163"
     },
     new
@@ -6651,6 +7003,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-14:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686124"
     },
     new
@@ -6670,6 +7023,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 3.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686188"
     },
     new
@@ -6688,6 +7042,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048159776"
     },
     new
@@ -6706,6 +7061,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001035429991"
     },
     new
@@ -6725,6 +7081,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 2.9D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700069"
     },
     new
@@ -6744,6 +7101,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696750"
     },
     new
@@ -6763,6 +7121,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677165"
     },
     new
@@ -6782,6 +7141,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:30; Вт: 08:00-20:30; Ср: 08:00-20:30; Чт: 08:00-20:30; Пт: 08:00-20:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841299175"
     },
     new
@@ -6801,6 +7161,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 1.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678285"
     },
     new
@@ -6820,6 +7181,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677568"
     },
     new
@@ -6839,6 +7201,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-16:00",
         Timezone = "+03:00",
         Rating = 4.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682003"
     },
     new
@@ -6858,6 +7221,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-15:35; Вт: 09:00-15:35; Ср: 09:00-15:35; Чт: 09:00-15:35; Пт: 09:00-15:35; Сб: 09:00-15:35",
         Timezone = "+03:00",
         Rating = 1.8D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677967"
     },
     new
@@ -6877,6 +7241,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696799"
     },
     new
@@ -6896,6 +7261,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 4.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692247"
     },
     new
@@ -6914,6 +7280,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838690262"
     },
     new
@@ -6933,6 +7300,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718646"
     },
     new
@@ -6952,6 +7320,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001044032941"
     },
     new
@@ -6971,6 +7340,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693256"
     },
     new
@@ -6989,6 +7359,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696755"
     },
     new
@@ -7008,6 +7379,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:30; Вт: 08:00-18:30; Ср: 08:00-18:30; Чт: 08:00-18:30; Пт: 08:00-18:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715368"
     },
     new
@@ -7027,6 +7399,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677513"
     },
     new
@@ -7046,6 +7419,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697118"
     },
     new
@@ -7064,6 +7438,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079932299"
     },
     new
@@ -7083,6 +7458,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840756497"
     },
     new
@@ -7101,6 +7477,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079652276"
     },
     new
@@ -7120,6 +7497,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677980"
     },
     new
@@ -7138,6 +7516,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715082"
     },
     new
@@ -7157,6 +7536,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079594558"
     },
     new
@@ -7176,6 +7556,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677073"
     },
     new
@@ -7195,6 +7576,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 2.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689793"
     },
     new
@@ -7213,6 +7595,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686101"
     },
     new
@@ -7231,6 +7614,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693075"
     },
     new
@@ -7250,6 +7634,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-16:00; Вт: 09:00-16:00; Ср: 09:00-16:00; Чт: 09:00-16:00; Пт: 09:00-16:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700054"
     },
     new
@@ -7269,6 +7654,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001020272559"
     },
     new
@@ -7287,6 +7673,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-15:00; Вт: 08:30-15:00; Ср: 08:30-15:00; Чт: 08:30-15:00; Пт: 08:30-15:00; Сб: 08:30-14:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841650529"
     },
     new
@@ -7306,6 +7693,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840952962"
     },
     new
@@ -7325,6 +7713,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700110"
     },
     new
@@ -7344,6 +7733,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838693093"
     },
     new
@@ -7363,6 +7753,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692076"
     },
     new
@@ -7382,6 +7773,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838700007"
     },
     new
@@ -7400,6 +7792,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001077765252"
     },
     new
@@ -7419,6 +7812,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 2.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001064064412"
     },
     new
@@ -7438,6 +7832,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2.2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696735"
     },
     new
@@ -7457,6 +7852,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001041776123"
     },
     new
@@ -7475,6 +7871,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-16:00; Вт: 08:00-16:00; Ср: 08:00-16:00; Чт: 08:00-16:00; Пт: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001018987398"
     },
     new
@@ -7494,6 +7891,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678352"
     },
     new
@@ -7512,6 +7910,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686539"
     },
     new
@@ -7531,6 +7930,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838681986"
     },
     new
@@ -7549,6 +7949,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001032571152"
     },
     new
@@ -7567,6 +7968,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686019"
     },
     new
@@ -7585,6 +7987,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001077524292"
     },
     new
@@ -7603,6 +8006,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-17:00; Вт: 08:30-17:00; Ср: 08:30-17:00; Чт: 08:30-17:00; Пт: 08:30-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714764"
     },
     new
@@ -7621,6 +8025,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001062959175"
     },
     new
@@ -7640,6 +8045,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00; Вс: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838537064"
     },
     new
@@ -7658,6 +8064,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-19:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838694312"
     },
     new
@@ -7677,6 +8084,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001007145096"
     },
     new
@@ -7695,6 +8103,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689246"
     },
     new
@@ -7714,6 +8123,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838597854"
     },
     new
@@ -7732,6 +8142,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-16:10; Вт: 08:30-16:10; Ср: 08:30-16:10; Чт: 08:30-16:10; Пт: 08:30-16:10; Сб: 08:30-16:10",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696862"
     },
     new
@@ -7751,6 +8162,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 2.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697088"
     },
     new
@@ -7769,6 +8181,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001044778058"
     },
     new
@@ -7787,6 +8200,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-15:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001063976649"
     },
     new
@@ -7806,6 +8220,7 @@ public static class SeedSchools
         WorkingHours = "",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079869995"
     },
     new
@@ -7824,6 +8239,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677066"
     },
     new
@@ -7843,6 +8259,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:45-18:00; Вт: 07:45-18:00; Ср: 07:45-18:00; Чт: 07:45-18:00; Пт: 07:45-18:00; Сб: 07:45-18:00",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001031998441"
     },
     new
@@ -7862,6 +8279,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-16:00; Вт: 09:00-16:00; Ср: 09:00-16:00; Чт: 09:00-16:00; Пт: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001018368832"
     },
     new
@@ -7880,6 +8298,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838677629"
     },
     new
@@ -7898,6 +8317,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686480"
     },
     new
@@ -7917,6 +8337,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692191"
     },
     new
@@ -7936,6 +8357,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678725"
     },
     new
@@ -7955,6 +8377,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840778817"
     },
     new
@@ -7974,6 +8397,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001064196718"
     },
     new
@@ -7993,6 +8417,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676975"
     },
     new
@@ -8012,6 +8437,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 1.4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678363"
     },
     new
@@ -8031,6 +8457,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00; Сб: 08:00-16:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689421"
     },
     new
@@ -8050,6 +8477,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:30-15:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001019921167"
     },
     new
@@ -8068,6 +8496,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048072772"
     },
     new
@@ -8086,6 +8515,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686481"
     },
     new
@@ -8105,6 +8535,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079007326"
     },
     new
@@ -8124,6 +8555,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-13:00, 14:00-17:00; Вт: 08:00-13:00, 14:00-17:00; Ср: 08:00-13:00, 14:00-17:00; Чт: 08:00-13:00, 14:00-17:00; Пт: 08:00-13:00, 14:00-17:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001045039336"
     },
     new
@@ -8142,6 +8574,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-13:00, 14:00-18:00; Вт: 09:00-13:00, 14:00-18:00; Ср: 09:00-13:00, 14:00-18:00; Чт: 09:00-13:00, 14:00-18:00; Пт: 09:00-13:00, 14:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715588"
     },
     new
@@ -8161,6 +8594,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840002430"
     },
     new
@@ -8180,6 +8614,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-15:00; Вс: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001066780440"
     },
     new
@@ -8199,6 +8634,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001032032429"
     },
     new
@@ -8218,6 +8654,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:30; Вт: 09:00-18:30; Ср: 09:00-18:30; Чт: 09:00-18:30; Пт: 09:00-18:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001075589017"
     },
     new
@@ -8237,6 +8674,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719898"
     },
     new
@@ -8256,6 +8694,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-16:00; Вт: 08:30-16:00; Ср: 08:30-16:00; Чт: 08:30-16:00; Пт: 08:30-16:00; Сб: 08:30-15:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001039460075"
     },
     new
@@ -8275,6 +8714,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:30; Вт: 08:00-19:30; Ср: 08:00-19:30; Чт: 08:00-19:30; Пт: 08:00-19:30; Сб: 08:00-19:30; Вс: 08:00-19:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001074364839"
     },
     new
@@ -8294,6 +8734,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001059337081"
     },
     new
@@ -8313,6 +8754,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697113"
     },
     new
@@ -8332,6 +8774,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838682330"
     },
     new
@@ -8351,6 +8794,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
         Rating = 1.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001053608138"
     },
     new
@@ -8369,6 +8813,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692784"
     },
     new
@@ -8388,6 +8833,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-17:00; Вт: 08:30-17:00; Ср: 08:30-17:00; Чт: 08:30-17:00; Пт: 08:30-17:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001052617766"
     },
     new
@@ -8407,6 +8853,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696894"
     },
     new
@@ -8425,6 +8872,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-16:05; Вт: 08:30-16:05; Ср: 08:30-16:05; Чт: 08:30-16:05; Пт: 08:30-16:05",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001025470105"
     },
     new
@@ -8444,6 +8892,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 4.5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838696886"
     },
     new
@@ -8463,6 +8912,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:00; Вт: 08:30-20:00; Ср: 08:30-20:00; Чт: 08:30-20:00; Пт: 08:30-20:00; Сб: 08:30-15:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840394805"
     },
     new
@@ -8482,6 +8932,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-21:00; Вт: 09:00-21:00; Ср: 09:00-21:00; Чт: 09:00-21:00; Пт: 09:00-21:00; Сб: 09:00-21:00",
         Timezone = "+03:00",
         Rating = 1.6D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692129"
     },
     new
@@ -8501,6 +8952,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:30-21:00; Вт: 07:30-21:00; Ср: 07:30-21:00; Чт: 07:30-21:00; Пт: 07:30-21:00; Сб: 07:30-21:00",
         Timezone = "+03:00",
         Rating = 3.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838697144"
     },
     new
@@ -8520,6 +8972,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-22:00; Вт: 09:00-22:00; Ср: 09:00-22:00; Чт: 09:00-22:00; Пт: 09:00-22:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079218953"
     },
     new
@@ -8539,6 +8992,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689215"
     },
     new
@@ -8558,6 +9012,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838657188"
     },
     new
@@ -8576,6 +9031,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838678050"
     },
     new
@@ -8595,6 +9051,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-21:00; Вт: 07:00-21:00; Ср: 07:00-21:00; Чт: 07:00-21:00; Пт: 07:00-21:00",
         Timezone = "+03:00",
         Rating = 3.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689894"
     },
     new
@@ -8613,6 +9070,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838694314"
     },
     new
@@ -8631,6 +9089,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:30; Вт: 08:00-19:30; Ср: 08:00-19:30; Чт: 08:00-19:30; Пт: 08:00-19:30; Сб: 08:00-19:30; Вс: 08:00-19:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001074364855"
     },
     new
@@ -8649,6 +9108,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838691900"
     },
     new
@@ -8668,6 +9128,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838694347"
     },
     new
@@ -8687,6 +9148,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 2D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689182"
     },
     new
@@ -8706,6 +9168,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686419"
     },
     new
@@ -8724,6 +9187,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-17:05; Вт: 08:30-17:05; Ср: 08:30-17:05; Чт: 08:30-17:05; Пт: 08:30-17:05; Сб: 08:30-13:20",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840719501"
     },
     new
@@ -8742,6 +9206,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839298400"
     },
     new
@@ -8760,6 +9225,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838725521"
     },
     new
@@ -8779,6 +9245,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-20:30; Вт: 08:30-20:30; Ср: 08:30-20:30; Чт: 08:30-20:30; Пт: 08:30-20:30",
         Timezone = "+03:00",
         Rating = 1.1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692584"
     },
     new
@@ -8798,6 +9265,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838689912"
     },
     new
@@ -8816,6 +9284,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001080711854"
     },
     new
@@ -8835,6 +9304,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-17:50; Вт: 08:30-17:50; Ср: 08:30-17:50; Чт: 08:30-17:50; Пт: 08:30-17:50; Сб: 08:30-13:15",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841363046"
     },
     new
@@ -8854,6 +9324,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001047569384"
     },
     new
@@ -8873,6 +9344,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-15:00; Вт: 09:00-15:00; Ср: 09:00-15:00; Чт: 09:00-15:00; Пт: 09:00-15:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718599"
     },
     new
@@ -8891,6 +9363,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838577074"
     },
     new
@@ -8909,6 +9382,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001053619969"
     },
     new
@@ -8927,6 +9401,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839298013"
     },
     new
@@ -8945,6 +9420,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001041367980"
     },
     new
@@ -8964,6 +9440,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 3.7D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838716546"
     },
     new
@@ -8983,6 +9460,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001024997623"
     },
     new
@@ -9002,6 +9480,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001022694574"
     },
     new
@@ -9021,6 +9500,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-17:00; Вт: 08:00-17:00; Ср: 08:00-17:00; Чт: 08:00-17:00; Пт: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838533406"
     },
     new
@@ -9039,6 +9519,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:30; Вт: 09:00-18:30; Ср: 09:00-18:30; Чт: 09:00-18:30; Пт: 09:00-18:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048159702"
     },
     new
@@ -9057,6 +9538,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-16:00; Вт: 08:00-16:00; Ср: 08:00-16:00; Чт: 08:00-16:00; Пт: 08:00-16:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841406255"
     },
     new
@@ -9075,6 +9557,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001047574422"
     },
     new
@@ -9093,6 +9576,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-17:30; Вт: 08:30-17:30; Ср: 08:30-17:30; Чт: 08:30-17:30; Пт: 08:30-17:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840988158"
     },
     new
@@ -9112,6 +9596,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001043614422"
     },
     new
@@ -9130,6 +9615,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 14:00-18:00; Вт: 14:00-18:00; Ср: 14:00-18:00; Чт: 14:00-18:00; Пт: 14:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001066163756"
     },
     new
@@ -9148,6 +9634,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001079695955"
     },
     new
@@ -9167,6 +9654,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001025251828"
     },
     new
@@ -9185,6 +9673,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-14:05, 14:30-18:30; Вт: 08:30-14:05, 14:30-18:30; Ср: 08:30-14:05, 14:30-18:30; Чт: 08:30-14:05, 14:30-18:30; Пт: 08:30-14:05, 14:30-18:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001029173719"
     },
     new
@@ -9204,6 +9693,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-15:30",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841303776"
     },
     new
@@ -9222,6 +9712,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001063192424"
     },
     new
@@ -9240,6 +9731,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-15:00; Вт: 09:00-15:00; Ср: 09:00-15:00; Чт: 09:00-15:00; Пт: 09:00-15:00; Сб: 09:00-14:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841588244"
     },
     new
@@ -9259,6 +9751,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 10:00-13:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001030137273"
     },
     new
@@ -9277,6 +9770,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714513"
     },
     new
@@ -9296,6 +9790,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 08:00-21:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840837545"
     },
     new
@@ -9314,6 +9809,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692752"
     },
     new
@@ -9332,6 +9828,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-15:35; Вт: 09:00-15:35; Ср: 09:00-15:35; Чт: 09:00-15:35; Пт: 09:00-15:35; Сб: 08:00-16:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838686313"
     },
     new
@@ -9350,6 +9847,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001070535687"
     },
     new
@@ -9368,6 +9866,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-14:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839298055"
     },
     new
@@ -9387,6 +9886,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00; Вс: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838731557"
     },
     new
@@ -9405,6 +9905,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715153"
     },
     new
@@ -9424,6 +9925,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 10:00-18:00; Вт: 10:00-18:00; Ср: 10:00-18:00; Чт: 10:00-18:00; Пт: 10:00-18:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838721799"
     },
     new
@@ -9442,6 +9944,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718789"
     },
     new
@@ -9461,6 +9964,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-22:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715109"
     },
     new
@@ -9479,6 +9983,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838721791"
     },
     new
@@ -9498,6 +10003,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719071"
     },
     new
@@ -9517,6 +10023,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715539"
     },
     new
@@ -9536,6 +10043,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718942"
     },
     new
@@ -9555,6 +10063,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00",
         Timezone = "+03:00",
         Rating = 2.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719120"
     },
     new
@@ -9573,6 +10082,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718856"
     },
     new
@@ -9592,6 +10102,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-13:00, 14:00-18:00; Вт: 09:00-13:00, 14:00-18:00; Ср: 09:00-13:00, 14:00-18:00; Чт: 09:00-13:00, 14:00-18:00; Пт: 09:00-13:00, 14:00-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838721817"
     },
     new
@@ -9611,6 +10122,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719220"
     },
     new
@@ -9629,6 +10141,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718779"
     },
     new
@@ -9647,6 +10160,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00; Сб: 00:00-24:00; Вс: 00:00-24:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840030367"
     },
     new
@@ -9666,6 +10180,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715096"
     },
     new
@@ -9684,6 +10199,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838721806"
     },
     new
@@ -9702,6 +10218,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-17:00; Вт: 08:00-17:00; Ср: 08:00-17:00; Чт: 08:00-17:00; Пт: 08:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719132"
     },
     new
@@ -9721,6 +10238,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 4.3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838719199"
     },
     new
@@ -9739,6 +10257,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00; Сб: 00:00-24:00; Вс: 00:00-24:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841549713"
     },
     new
@@ -9757,6 +10276,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-13:30, 14:00-17:30; Вт: 09:00-13:30, 14:00-17:30; Ср: 09:00-13:30, 14:00-17:30; Чт: 09:00-13:30, 14:00-17:30; Пт: 09:00-13:30, 14:00-17:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838598657"
     },
     new
@@ -9775,6 +10295,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-17:30; Вт: 09:00-17:30; Ср: 09:00-17:30; Чт: 09:00-17:30; Пт: 09:00-17:30",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838598663"
     },
     new
@@ -9794,6 +10315,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838715141"
     },
     new
@@ -9812,6 +10334,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00; Сб: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838731500"
     },
     new
@@ -9830,6 +10353,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001047541145"
     },
     new
@@ -9849,6 +10373,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-17:00; Вт: 08:00-17:00; Ср: 08:00-17:00; Чт: 08:00-17:00; Пт: 08:00-17:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838511604"
     },
     new
@@ -9867,6 +10392,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-21:00; Вт: 09:00-21:00; Ср: 09:00-21:00; Чт: 09:00-21:00; Пт: 09:00-21:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841660459"
     },
     new
@@ -9885,6 +10411,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838507915"
     },
     new
@@ -9903,6 +10430,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 00:00-24:00; Вт: 00:00-24:00; Ср: 00:00-24:00; Чт: 00:00-24:00; Пт: 00:00-24:00; Сб: 00:00-24:00; Вс: 00:00-24:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841687165"
     },
     new
@@ -9921,6 +10449,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 17:30-19:00; Вт: 17:30-19:00; Ср: 17:30-19:00; Чт: 17:30-19:00; Пт: 17:30-19:00; Сб: 17:30-19:00; Вс: 17:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001028423260"
     },
     new
@@ -9939,6 +10468,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001080587206"
     },
     new
@@ -9957,6 +10487,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840850919"
     },
     new
@@ -9975,6 +10506,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048159983"
     },
     new
@@ -9993,6 +10525,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-17:00; Вт: 09:00-17:00; Ср: 09:00-17:00; Чт: 09:00-17:00; Пт: 09:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001024749147"
     },
     new
@@ -10011,6 +10544,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001048159953"
     },
     new
@@ -10029,6 +10563,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348553838507917"
     },
     new
@@ -10047,6 +10582,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001068944350"
     },
     new
@@ -10066,6 +10602,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-14:10; Вт: 08:00-14:10; Ср: 08:00-14:10; Чт: 08:00-14:10; Пт: 08:00-14:10",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839957918"
     },
     new
@@ -10084,6 +10621,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838624924"
     },
     new
@@ -10103,6 +10641,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00; Сб: 09:00-17:00",
         Timezone = "+03:00",
         Rating = 4D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838714627"
     },
     new
@@ -10121,6 +10660,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838674155"
     },
     new
@@ -10140,6 +10680,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838711719"
     },
     new
@@ -10159,6 +10700,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-18:00; Вт: 09:00-18:00; Ср: 09:00-18:00; Чт: 09:00-18:00; Пт: 09:00-18:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839957919"
     },
     new
@@ -10177,6 +10719,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692967"
     },
     new
@@ -10195,6 +10738,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-17:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838676667"
     },
     new
@@ -10214,6 +10758,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 10:00-18:00; Вт: 10:00-18:00; Ср: 10:00-18:00; Чт: 10:00-18:00; Пт: 10:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001030218180"
     },
     new
@@ -10233,6 +10778,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:30; Вт: 08:30-18:30; Ср: 08:30-18:30; Чт: 08:30-18:30; Пт: 08:30-18:30",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838725896"
     },
     new
@@ -10251,6 +10797,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001074540495"
     },
     new
@@ -10269,6 +10816,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838706870"
     },
     new
@@ -10288,6 +10836,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718318"
     },
     new
@@ -10306,6 +10855,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 10:00-19:00; Вт: 10:00-19:00; Ср: 10:00-19:00; Чт: 10:00-19:00; Пт: 10:00-19:00; Сб: 10:00-19:00; Вс: 10:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001078308566"
     },
     new
@@ -10325,6 +10875,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001044468479"
     },
     new
@@ -10343,6 +10894,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001025543587"
     },
     new
@@ -10362,6 +10914,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838654946"
     },
     new
@@ -10380,6 +10933,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718317"
     },
     new
@@ -10398,6 +10952,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838718356"
     },
     new
@@ -10417,6 +10972,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 3D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838656032"
     },
     new
@@ -10436,6 +10992,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838655501"
     },
     new
@@ -10455,6 +11012,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001040360833"
     },
     new
@@ -10474,6 +11032,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838656100"
     },
     new
@@ -10492,6 +11051,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-19:00; Вт: 09:00-19:00; Ср: 09:00-19:00; Чт: 09:00-19:00; Пт: 09:00-19:00; Сб: 10:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001045224647"
     },
     new
@@ -10511,6 +11071,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001030798888"
     },
     new
@@ -10530,6 +11091,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 09:00-20:00; Вт: 09:00-20:00; Ср: 09:00-20:00; Чт: 09:00-20:00; Пт: 09:00-20:00; Сб: 09:00-16:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001064323428"
     },
     new
@@ -10548,6 +11110,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838727647"
     },
     new
@@ -10566,6 +11129,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 07:00-19:00; Вт: 07:00-19:00; Ср: 07:00-19:00; Чт: 07:00-19:00; Пт: 07:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552841763185"
     },
     new
@@ -10584,6 +11148,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552840571587"
     },
     new
@@ -10603,6 +11168,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00",
         Timezone = "+03:00",
         Rating = 1D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838653490"
     },
     new
@@ -10621,6 +11187,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-19:00; Вт: 08:00-19:00; Ср: 08:00-19:00; Чт: 08:00-19:00; Пт: 08:00-19:00; Сб: 08:00-19:00; Вс: 08:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001059757205"
     },
     new
@@ -10639,6 +11206,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 10:00-19:00; Вт: 10:00-19:00; Ср: 10:00-19:00; Чт: 10:00-19:00; Пт: 10:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001076388698"
     },
     new
@@ -10657,6 +11225,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-22:00; Вт: 08:00-22:00; Ср: 08:00-22:00; Чт: 08:00-22:00; Пт: 08:00-22:00; Сб: 10:00-22:00; Вс: 10:00-22:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001061152238"
     },
     new
@@ -10675,6 +11244,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 10:00-19:00; Вт: 10:00-19:00; Ср: 10:00-19:00; Чт: 10:00-19:00; Пт: 10:00-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001076388392"
     },
     new
@@ -10694,6 +11264,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552839617793"
     },
     new
@@ -10712,6 +11283,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-18:00; Вт: 08:00-18:00; Ср: 08:00-18:00; Чт: 08:00-18:00; Пт: 08:00-18:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/5348552838692759"
     },
     new
@@ -10731,6 +11303,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 12:30-20:30; Вт: 12:30-20:30; Ср: 12:30-20:30; Чт: 12:30-20:30; Пт: 12:30-20:30; Сб: 10:00-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001063969916"
     },
     new
@@ -10749,6 +11322,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:30-19:00; Вт: 08:30-19:00; Ср: 08:30-19:00; Чт: 08:30-19:00; Пт: 08:30-19:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001049703906"
     },
     new
@@ -10767,6 +11341,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-20:00; Вт: 08:00-20:00; Ср: 08:00-20:00; Чт: 08:00-20:00; Пт: 08:00-20:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001029423634"
     },
     new
@@ -10785,6 +11360,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 08:00-21:00; Вт: 08:00-21:00; Ср: 08:00-21:00; Чт: 08:00-21:00; Пт: 08:00-21:00; Сб: 09:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001019937672"
     },
     new
@@ -10804,6 +11380,7 @@ public static class SeedSchools
         WorkingHours = "Пн: 08:30-18:00; Вт: 08:30-18:00; Ср: 08:30-18:00; Чт: 08:30-18:00; Пт: 08:30-18:00",
         Timezone = "+03:00",
         Rating = 5D,
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001047151863"
     },
     new
@@ -10822,6 +11399,7 @@ public static class SeedSchools
         Country = "Россия",
         WorkingHours = "Пн: 09:00-15:00; Вт: 09:00-15:00; Ср: 09:00-15:00; Чт: 09:00-15:00; Пт: 09:00-15:00",
         Timezone = "+03:00",
+        Type = OrganizationTypes.School,
         TwoGisUrl = "https://2gis.com/firm/70000001021879799"
     });
     }

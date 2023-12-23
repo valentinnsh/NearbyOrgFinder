@@ -3,8 +3,8 @@ using Database.Records;
 
 namespace Database.Entities;
 
-[Table("schools")]
-public class SchoolEntity: SchoolRecord
+[Table("organizations")]
+public class OrganizationEntity: OrganizationRecord
 {
     public CityEntity City { get; set; }
 }

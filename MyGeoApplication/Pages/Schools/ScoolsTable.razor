@@ -5,7 +5,7 @@
 @using System.Linq.Dynamic.Core
 @using Microsoft.EntityFrameworkCore
 @using MyGeoApplication.Services
-@page "/schools"
+@page "/organizations"
 
 
 
@@ -13,17 +13,16 @@
 <RadzenNotification/>
 <RadzenTooltip/>
 
-<PageTitle>Schools</PageTitle>
+<PageTitle>Organizations</PageTitle>
 
 <div class="tool-panel">
-    <RadzenButton Text="Add" ButtonStyle="ButtonStyle.Primary" Click="@OnAddSchoolOpen"/>
-    <RadzenButton Text="Export to Csv" ButtonStyle="ButtonStyle.Light" Click="@OnExportToCSV"/>
+    <RadzenButton Text="Add" ButtonStyle="ButtonStyle.Primary" Click="@OnAddOrganizationOpen"/>
 </div>
 
 <RadzenDataGrid
-    TItem="SchoolEntity"
+    TItem="OrganizationEntity"
     @ref="_grid"
-    Data="@_schools"
+    Data="@_organizations"
     Count="@_count"
     IsLoading="@isLoading"
     LoadData="@LoadData"
@@ -37,7 +36,7 @@
         <div class="details-control-body">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">School Details</h3>
+                    <h3 class="panel-title">organization Details</h3>
                 </div>
                 <div class="panel-body">
                     <dl class="row">
@@ -73,15 +72,16 @@
         </div>
     </Template>
     <Columns>
-        <RadzenDataGridColumn TItem="SchoolEntity" Title="Actions" Width="10ex" MinWidth="10ex" Resizable="false"
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Actions" Width="10ex" MinWidth="10ex" Resizable="false"
                               Sortable="false" Filterable="false">
-            <Template Context="school">
-                <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnDeleteSchool(school))"/>
-                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnEditSchool(school))"/>
+            <Template Context="organization">
+                <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnDeleteOrganization(organization))"/>
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnEditorganization(organization))"/>
             </Template>
         </RadzenDataGridColumn>
-        <RadzenDataGridColumn TItem="SchoolEntity" Title="Name" Property="@nameof(SchoolEntity.Name)" Filterable="true"/>
-        <RadzenDataGridColumn TItem="SchoolEntity" Title="Location" Property="@nameof(SchoolEntity.Location)" Filterable="false"/>
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Name" Property="@nameof(OrganizationEntity.Name)" Filterable="true"/>
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Location" Property="@nameof(OrganizationEntity.Location)" Filterable="false"/>
+        <RadzenDataGridColumn TItem="OrganizationEntity" Title="Type" Property="@nameof(OrganizationEntity.Type)" Filterable="true"/>
     </Columns>
 </RadzenDataGrid>
 
@@ -89,17 +89,17 @@
     [Inject] NotificationService Notifications { get; set; }
     [Inject] DialogService DialogService { get; set; }
     [Inject] MyGeoDbContext DbCOntext { get; set; }
-    [Inject] ISchoolsService SchoolsService { get; set; }
+    [Inject] IOrganizationsService OrganizationsService { get; set; }
     
-    private IEnumerable<SchoolEntity> _schools;
+    private IEnumerable<OrganizationEntity> _organizations;
     private int _count;
     bool isLoading;
-    private RadzenDataGrid<SchoolEntity> _grid;
+    private RadzenDataGrid<OrganizationEntity> _grid;
 
     async Task LoadData(LoadDataArgs args)
     {
         isLoading = true;
-        var query = DbCOntext.Schools.Include(_ => _.City).AsQueryable();
+        var query = DbCOntext.Organizations.Include(_ => _.City).AsQueryable();
 
         if (!string.IsNullOrEmpty(args.Filter))
         {
@@ -112,39 +112,34 @@
         }
 
         _count = query.Count();
-        _schools = query.Skip(args.Skip.Value).Take(args.Top.Value).ToList();
+        _organizations = query.Skip(args.Skip.Value).Take(args.Top.Value).ToList();
         
         isLoading = false;
     } 
 
-    private Task<object> OnAddSchoolOpen()
+    private Task<object> OnAddOrganizationOpen()
     {
-        DialogService.OnClose += OnAddSchoolClosed;
-        return CreateSchoolDialog.OpenAsync(DialogService);
+        DialogService.OnClose += OnAddOrganizationClosed;
+        return CreateOrganizationDialog.OpenAsync(DialogService);
     }
 
-    private void OnAddSchoolClosed(object obj)
+    private void OnAddOrganizationClosed(object obj)
     {
-        DialogService.OnClose -= OnAddSchoolClosed;
+        DialogService.OnClose -= OnAddOrganizationClosed;
         if (obj != null) _grid.Reload();
     }
 
-    private void OnExportToCSV()
+    private async Task OnDeleteOrganization(OrganizationEntity organization)
     {
-        Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
-    }
-
-    private async Task OnDeleteSchool(SchoolEntity school)
-    {
-        var confirm = await DialogService.Confirm("Are you sure?", "Delete School", new ConfirmOptions() { OkButtonText = "Yes", CancelButtonText = "No" });
+        var confirm = await DialogService.Confirm("Are you sure?", "Delete organization", new ConfirmOptions() { OkButtonText = "Yes", CancelButtonText = "No" });
         if (confirm != true) return;
         try
         {
-            await SchoolsService.DeleteSchoolAsync(school.Id);
+            await OrganizationsService.DeleteOrganizationAsync(organization.Id);
         }
         catch (Exception e)
         {
-            Notifications.Notify(NotificationSeverity.Error, "Failed to delete school");
+            Notifications.Notify(NotificationSeverity.Error, "Failed to delete organization");
         }
         finally
         {
@@ -152,7 +147,7 @@
         }
     }
 
-    private async Task OnEditSchool(SchoolEntity school)
+    private async Task OnEditorganization(OrganizationEntity organization)
     {
         Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
     }

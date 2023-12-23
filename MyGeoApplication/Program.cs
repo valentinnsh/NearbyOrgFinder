@@ -31,6 +31,9 @@ builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ISchoolsService, SchoolsService>();
+builder.Services.AddScoped<IPharmaciesService, PharmaciesService>();
+builder.Services.AddScoped<IOrganizationsService, OrganizationsService>();
+
 
 builder.Services.AddControllers(options =>
 {
