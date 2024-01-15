@@ -5,7 +5,7 @@
 @using System.Linq.Dynamic.Core
 @using Microsoft.EntityFrameworkCore
 @using NearbyOrgFinder.Services
-@using DbContext = Database.DbContext
+@using DbContext = Database.GeoDbContext
 @page "/organizations"
 
 
@@ -89,7 +89,7 @@
 @code {
     [Inject] NotificationService Notifications { get; set; }
     [Inject] DialogService DialogService { get; set; }
-    [Inject] DbContext DbCOntext { get; set; }
+    [Inject] DbContext GeoDbCOntext { get; set; }
     [Inject] IOrganizationsService OrganizationsService { get; set; }
     
     private IEnumerable<OrganizationEntity> _organizations;
@@ -100,7 +100,7 @@
     async Task LoadData(LoadDataArgs args)
     {
         isLoading = true;
-        var query = DbCOntext.Organizations.Include(_ => _.City).AsQueryable();
+        var query = GeoDbCOntext.Organizations.Include(_ => _.City).AsQueryable();
 
         if (!string.IsNullOrEmpty(args.Filter))
         {

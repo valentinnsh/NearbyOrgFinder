@@ -77,12 +77,12 @@
     private RadzenDropDown<long> _citiesDd;
     private IEnumerable<CityEntity> _cities { get; set; }
     [Inject] IOrganizationsService OrganizationsService { get; set; }
-    [Inject] DbContext DbContext { get; set; }
+    [Inject] GeoDbContext GeoDbContext { get; set; }
     public CreateOrganizationModel model { get; } = new();
 
     protected async override Task OnInitializedAsync()
     {
-        _cities = DbContext.Cities.ToList();
+        _cities = GeoDbContext.Cities.ToList();
     }
 
     private async Task OnSubmit()

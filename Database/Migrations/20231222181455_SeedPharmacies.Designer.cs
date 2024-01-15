@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Database.Migrations
 {
-    [DbContext(typeof(DbContext))]
+    [DbContext(typeof(GeoDbContext))]
     [Migration("20231222181455_SeedPharmacies")]
     partial class SeedPharmacies
     {

@@ -1,5 +1,6 @@
 using Database;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using NearbyOrgFinder.Services;
 using NetTopologySuite.Geometries;
 using Npgsql;
@@ -9,30 +10,30 @@ namespace NearbyOrgFinder;
 
 public class Startup
 {
-    public Startup(IConfiguration configuration)
+    public Startup()
     {
-        Configuration = configuration;
+        Configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, true)
+            .AddJsonFile($"appsettings.Development.json", optional: true, true)
+            .Build();
     }
 
     public IConfiguration Configuration { get; }
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddDbContext<DbContext>();
+        services.AddDbContext<GeoDbContext>(opt => 
+            opt.EnableSensitiveDataLogging().UseNpgsql(Configuration.GetConnectionString("PostgresConnection"),
+                o => o.UseNetTopologySuite()));
         NpgsqlConnection.GlobalTypeMapper.UseGeoJson();
 
         services.AddRazorPages();
         services.AddServerSideBlazor();
-        services.AddHttpClient<ICityService, CityService>(client =>
-        {
-            client.BaseAddress = new Uri("http://localhost:5160/");
-        });
-        services.AddHttpClient();
         services.AddScoped<DialogService>();
         services.AddScoped<NotificationService>();
         services.AddScoped<TooltipService>();
-        services.AddScoped<ISchoolsService, SchoolsService>();
-        services.AddScoped<IPharmaciesService, PharmaciesService>();
+        services.AddScoped<ICityService, CityService>();
         services.AddScoped<IOrganizationsService, OrganizationsService>();
 
         services.AddControllers(options =>

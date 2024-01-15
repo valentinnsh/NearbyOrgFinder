@@ -1,5 +1,6 @@
+using Database;
+using Microsoft.EntityFrameworkCore;
 using NearbyOrgFinder.Data;
-using Newtonsoft.Json;
 
 namespace NearbyOrgFinder.Services;
 
@@ -10,18 +11,23 @@ public interface ICityService
 
 public class CityService : ICityService
 {
-    private readonly HttpClient _httpClient;
-
-    public CityService(HttpClient client)
+    private readonly GeoDbContext _geoDb;
+    public CityService(GeoDbContext context)
     {
-        _httpClient = client;
+        _geoDb = context;
     }
 
     public async Task<CityInfo> GetCityByIdAsync(string id)
     {
-        var response = await _httpClient.GetAsync($"api/cities/{id}");
-        response.EnsureSuccessStatusCode();
-        var stream = await response.Content.ReadAsStreamAsync();
-        return JsonExtensions.LoadFromStreamWithGeoJson<CityInfo>(stream);
+        var city = await _geoDb.Cities
+            .Where(c => c.ExternalId == Guid.Parse(id))
+            .Select(a => new CityInfo
+            {
+                ExternalId = a.ExternalId,
+                Center = a.Center,
+                Name = a.Name
+            }).FirstOrDefaultAsync();
+        if (city is null) throw new Exception("City was not found");
+        return city;
     }
 }

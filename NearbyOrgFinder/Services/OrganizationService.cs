@@ -3,7 +3,6 @@ using Database.Entities;
 using Microsoft.EntityFrameworkCore;
 using NearbyOrgFinder.Data;
 using NetTopologySuite.Geometries;
-using DbContext = Database.DbContext;
 
 namespace NearbyOrgFinder.Services;
 
@@ -19,11 +18,11 @@ public interface IOrganizationsService
 
 public class OrganizationsService : IOrganizationsService
 {
-    private readonly DbContext _db;
+    private readonly GeoDbContext _geoDb;
 
-    public OrganizationsService(DbContext dbContext)
+    public OrganizationsService(GeoDbContext geoDbContext)
     {
-        _db = dbContext;
+        _geoDb = geoDbContext;
     }
     
     public async Task<OrganizationEntity> CreateOrganizationAsync(CreateOrganizationModel model,CancellationToken token = default)
@@ -39,26 +38,26 @@ public class OrganizationsService : IOrganizationsService
             Type = model.Type
         };
         
-        var entry = _db.Add(newOrganizationEntity);
-        await _db.SaveChangesAsync(token);
+        var entry = _geoDb.Add(newOrganizationEntity);
+        await _geoDb.SaveChangesAsync(token);
         return entry.Entity;
     }
 
     public async Task DeleteOrganizationAsync(long organizationId, CancellationToken token = default)
     {
-        var entity = await _db.Organizations.Where(_ => _.Id == organizationId).FirstOrDefaultAsync(token);
+        var entity = await _geoDb.Organizations.Where(_ => _.Id == organizationId).FirstOrDefaultAsync(token);
         if (entity is null) return;
-        _db.Remove(entity);
-        await _db.SaveChangesAsync(token);
+        _geoDb.Remove(entity);
+        await _geoDb.SaveChangesAsync(token);
     }
 
     public async Task<IEnumerable<OrganizationEntity>> GetOrganizationListByCityId(Guid cityId, OrganizationTypes type)
     {
-        return  _db.Organizations.Include(x => x.City)
+        return  _geoDb.Organizations.Include(x => x.City)
             .Where(s => s.City.ExternalId == cityId && s.Type == type);
     }
 
     public async Task<OrganizationEntity> GetNearestOrganization(Point point, OrganizationTypes type) =>
-        (await _db.Organizations.Where(o => o.Type == type)
+        (await _geoDb.Organizations.Where(o => o.Type == type)
             .OrderBy(s => s.Location.Distance(point)).FirstOrDefaultAsync())!;
 }

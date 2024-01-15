@@ -125,8 +125,6 @@
 @code{
     [Inject] NotificationService Notifications { get; set; }
     [Inject] ICityService CityService { get; set; }
-    [Inject] ISchoolsService SchoolsService { get; set; }
-    [Inject] IPharmaciesService PharmaciesService { get; set; }
     [Inject] IOrganizationsService OrganizationsService { get; set; }
     
     private Coordinate _center = new(0, 0);
@@ -179,11 +177,11 @@
         switch (type)
         {
             case OrganizationTypes.School:
-                orgs = await SchoolsService.GetSchoolListByCityId(_selectedCity.ExternalId);
+                orgs = await OrganizationsService.GetOrganizationListByCityId(_selectedCity.ExternalId, OrganizationTypes.School);
                 iconImage = "images/high-school-icon-png.png";
                 break;
             case OrganizationTypes.Pharmacy:
-                orgs = await PharmaciesService.GetPharmacyListByCityId(_selectedCity.ExternalId);
+                orgs = await OrganizationsService.GetOrganizationListByCityId(_selectedCity.ExternalId, OrganizationTypes.Pharmacy);
                 iconImage = "images/pharmacy-icon.png";
                 break;
             case OrganizationTypes.Vet:
@@ -218,25 +216,15 @@
     
     private async Task CalcNearestOrganization(OrganizationTypes type)
     {
-        string iconImage;
-        OrganizationEntity nearest;
-        switch (type)
+        var nearest = await OrganizationsService.GetNearestOrganization(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y), type);
+        var iconImage = type switch
         {
-            case OrganizationTypes.School:
-                nearest = await SchoolsService.GetNearestSchool(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y));
-                iconImage = "images/special-high-school-icon-png.png";
-                break;
-            case OrganizationTypes.Pharmacy:
-                nearest = await PharmaciesService.GetNearestPharmacy(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y));;
-                iconImage = "images/special-pharmacy-icon.png";
-                break;
-            case OrganizationTypes.Vet:
-                nearest = await OrganizationsService.GetNearestOrganization(new Point(_selectedPoint.Point.X, _selectedPoint.Point.Y), OrganizationTypes.Vet);
-                iconImage = "images/vet-icon-special.png";
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(type), type, null);
-        }
+            OrganizationTypes.School => "images/special-high-school-icon-png.png",
+            OrganizationTypes.Pharmacy => "images/special-pharmacy-icon.png",
+            OrganizationTypes.Vet => "images/vet-icon-special.png",
+            _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+        };
+        
         if(_nearestOrganization[type].Item2 != null)
             _map.MarkersList.Remove(_nearestOrganization[type].Item2);
         _nearestOrganization[type] = (nearest, new Marker(
