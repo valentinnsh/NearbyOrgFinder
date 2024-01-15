@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Database.Migrations
 {
-    [DbContext(typeof(MyGeoDbContext))]
+    [DbContext(typeof(DbContext))]
     partial class MyGeoDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

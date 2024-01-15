@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Database.Migrations
 {
-    [DbContext(typeof(MyGeoDbContext))]
+    [DbContext(typeof(DbContext))]
     [Migration("20231218181627_AddSchools")]
     partial class AddSchools
     {

@@ -1,4 +1,4 @@
-# MyGeoApp
+# NearbyOrgFinder
 
 This is a web application developed for the "GeoSpatial Databases" and "GeoApplications" courses at the University. It utilizes technologies such as PostGIS, Radzen Blazor, EF Core, and OpenLayers, with data sourced from 2GIS.
 
@@ -19,4 +19,4 @@ This is a web application developed for the "GeoSpatial Databases" and "GeoAppli
 
 ## Demo gif
 
-![](https://github.com/valentinnsh/MyGeoApp/blob/main/images/demo.gif)
+![](https://github.com/valentinnsh/NearbyOrgFinder/blob/main/images/demo.gif)

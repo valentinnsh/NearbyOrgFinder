@@ -19,7 +19,7 @@ public class ExistenceTest
     [Test]
     public async Task TryGettingSpbEntityFromDb()
     {
-        var context = new MyGeoDbContext();
+        var context = new DbContext();
         var test = await context.Cities.FirstAsync();
         test.Name.Should().Be("Saint-Petersburg");
     }

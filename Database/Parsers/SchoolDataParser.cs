@@ -44,13 +44,13 @@ public class SchoolDataParser
 
     public static void ParseSchools()
     {
-        string filePath = "/home/valentine/dev/MyGeoApp/Data/shools_spb.csv";
+        string filePath = "/home/valentine/dev/NearbyOrgFinder/Data/shools_spb.csv";
         List<OrganizationRecord> records = DataParser.ParseCsvFile(filePath);
         string seedMigration = GenerateSeedMigration(records);
 
         Console.WriteLine(seedMigration);
 
-        string newFilePAth = "/home/valentine/dev/MyGeoApp/Data/shools_spb_seed.txt";
+        string newFilePAth = "/home/valentine/dev/NearbyOrgFinder/Data/shools_spb_seed.txt";
 
         using (StreamWriter writer = new StreamWriter(newFilePAth))
         {
