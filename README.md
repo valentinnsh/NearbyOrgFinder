@@ -17,6 +17,11 @@ This is a web application developed for the "GeoSpatial Databases" and "GeoAppli
 - OpenLayers: A JavaScript library for displaying maps and overlaying spatial data.
 - Data from 2GIS
 
+## Run locally
+
+- docker-compose up
+- UI at localhost:8080
+
 ## Demo gif
 
 ![](https://github.com/valentinnsh/NearbyOrgFinder/blob/main/images/demo.gif)
