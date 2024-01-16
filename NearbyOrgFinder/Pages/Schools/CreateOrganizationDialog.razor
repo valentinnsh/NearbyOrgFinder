@@ -4,7 +4,6 @@
 @using NearbyOrgFinder.Services
 @using Database
 @using Database.Entities
-@using System.Collections
 
 <style>
     .form-container {
@@ -87,7 +86,7 @@
 
     private async Task OnSubmit()
     {
-        // binding does not works for some reason - therefore using workaround
+        // binding does not works for some reason - no time to figure out why therefore using workaround
         model.CityId = (long)_citiesDd?.GetValue();
         await OrganizationsService.CreateOrganizationAsync(model);
         _dialogService.Close(model);

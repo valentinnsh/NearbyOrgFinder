@@ -77,7 +77,7 @@
                               Sortable="false" Filterable="false">
             <Template Context="organization">
                 <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnDeleteOrganization(organization))"/>
-                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnEditorganization(organization))"/>
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Danger" Click="@(_ => OnUpdateOrganizationOpen(organization))"/>
             </Template>
         </RadzenDataGridColumn>
         <RadzenDataGridColumn TItem="OrganizationEntity" Title="Name" Property="@nameof(OrganizationEntity.Name)" Filterable="true"/>
@@ -147,9 +147,16 @@
             _grid.Reload();
         }
     }
-
-    private async Task OnEditorganization(OrganizationEntity organization)
+    
+    private Task<object> OnUpdateOrganizationOpen(OrganizationEntity organization)
     {
-        Notifications.Notify(NotificationSeverity.Info, "Not implemented yet =<");
+        DialogService.OnClose += OnUpdateOrganizationClosed;
+        return UpdateOrganizationDialog.OpenAsync(DialogService, organization);
+    }
+
+    private void OnUpdateOrganizationClosed(object obj)
+    {
+        DialogService.OnClose -= OnUpdateOrganizationClosed;
+        if (obj != null) _grid.Reload();
     }
 }

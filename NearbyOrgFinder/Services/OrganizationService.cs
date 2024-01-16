@@ -14,6 +14,7 @@ public interface IOrganizationsService
     public Task<IEnumerable<OrganizationEntity>> GetOrganizationListByCityId(Guid cityId, OrganizationTypes type);
     
     public Task<OrganizationEntity> GetNearestOrganization(Point point, OrganizationTypes type);
+    public Task<OrganizationEntity> UpdateOrganizationAsync(EditOrganizationModel model, long id, CancellationToken token = default);
 }
 
 public class OrganizationsService : IOrganizationsService
@@ -60,4 +61,24 @@ public class OrganizationsService : IOrganizationsService
     public async Task<OrganizationEntity> GetNearestOrganization(Point point, OrganizationTypes type) =>
         (await _geoDb.Organizations.Where(o => o.Type == type)
             .OrderBy(s => s.Location.Distance(point)).FirstOrDefaultAsync())!;
+
+    public async Task<OrganizationEntity> UpdateOrganizationAsync(EditOrganizationModel model, long id, CancellationToken token = default)
+    {
+        var entity = await _geoDb.Organizations.Where(_ => _.Id == id).FirstOrDefaultAsync();
+
+        if (entity is null) throw new Exception("Org was not found");
+        
+        entity.Name = model.Name;
+        entity.Description = model.Description;
+        entity.Location = new Point(model.Longtitude, model.Latitude);
+        entity.Address = model.Address;
+        entity.AddressComment = model.AddressComment;
+        entity.MailIndex = model.MailIndex;
+        entity.District = model.District;
+        entity.WorkingHours = model.WorkingHours;
+        entity.Timezone = model.Timezone;
+        
+        await _geoDb.SaveChangesAsync(token);
+        return entity;
+    }
 }

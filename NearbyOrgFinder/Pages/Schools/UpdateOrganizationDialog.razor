@@ -1,0 +1,138 @@
+@using Radzen
+@using Radzen.Blazor
+@using NearbyOrgFinder.Data
+@using NearbyOrgFinder.Services
+@using Database
+@using Database.Entities
+
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .form-row {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+    .button-container {
+        position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+    }
+</style>
+
+<RadzenTemplateForm TItem="EditOrganizationModel" Data="@model" Submit="@OnSubmit" class="form-container">
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.Name)" Style="font-weight: bold"/>
+        <RadzenTextBox @bind-Value="@model.Name" />
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.Description)" Style="font-weight: bold"/>
+        <RadzenTextArea @bind-Value="@model.Description" />
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.Address)" Style="font-weight: bold"/>
+        <RadzenTextBox @bind-Value="@model.Address"/>
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.AddressComment)" Style="font-weight: bold"/>
+        <RadzenTextArea @bind-Value="@model.AddressComment"/>
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.MailIndex)" Style="font-weight: bold"/>
+        <RadzenTextArea @bind-Value="@model.MailIndex"/>
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.District)" Style="font-weight: bold"/>
+        <RadzenTextArea @bind-Value="@model.District"/>
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.WorkingHours)" Style="font-weight: bold"/>
+        <RadzenTextArea @bind-Value="@model.WorkingHours"/>
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.Timezone)" Style="font-weight: bold"/>
+        <RadzenTextArea @bind-Value="@model.Timezone"/>
+    </div>
+    <div class="form-row">
+        <RadzenLabel Text="@nameof(model.Longtitude)" Style="font-weight: bold"/>
+        <RadzenNumeric @bind-Value="@model.Longtitude"/>
+        <RadzenLabel Text="@nameof(model.Latitude)" Style="font-weight: bold"/>
+        <RadzenNumeric @bind-Value="@model.Latitude"/>
+    </div>
+    <div class="modal-footer button-container">
+        <RadzenButton Text="Close" ButtonStyle="ButtonStyle.Secondary" Click="@OnCancel"/>
+        <RadzenButton Text="Save Changes" ButtonType="ButtonType.Submit"/>
+    </div>
+</RadzenTemplateForm>
+
+
+@code {
+    private static DialogService _dialogService;
+    private CityEntity _selectedCity;
+    private RadzenDropDown<long> _citiesDd;
+    private IEnumerable<CityEntity> _cities { get; set; }
+    [Inject] IOrganizationsService OrganizationsService { get; set; }
+    [Inject] GeoDbContext GeoDbContext { get; set; }
+    
+    [Parameter] public OrganizationEntity OrganizationEntity { get; set; }
+    
+    public EditOrganizationModel model { get; set; } = new();
+
+    protected async override Task OnInitializedAsync()
+    {
+        _cities = GeoDbContext.Cities.ToList();
+        model = new EditOrganizationModel()
+        {
+            Address = OrganizationEntity.Address,
+            AddressComment = OrganizationEntity.AddressComment,
+            Description = OrganizationEntity.Description,
+            District = OrganizationEntity.District,
+            Longtitude = OrganizationEntity.Location.X,
+            Latitude = OrganizationEntity.Location.Y,
+            MailIndex = OrganizationEntity.MailIndex,
+            Name = OrganizationEntity.Name,
+            Timezone = OrganizationEntity.Timezone,
+            WorkingHours = OrganizationEntity.WorkingHours
+        };
+    }
+
+    private async Task OnSubmit()
+    {
+        await OrganizationsService.UpdateOrganizationAsync(model, OrganizationEntity.Id);
+        _dialogService.Close(model);
+    }
+
+    private void OnCancel()
+    {
+        _dialogService.Close();
+    }
+
+    public static async Task<object> OpenAsync(DialogService dialogService, OrganizationEntity entity)
+    {
+        _dialogService = dialogService;
+        return await _dialogService.OpenAsync<UpdateOrganizationDialog>($"Update Organization {entity.Name}",
+            new Dictionary<string, object>() { },
+            new DialogOptions()
+            {
+                Width = "600px", Height = "840px",
+                ChildContent = _ => builder =>
+                {
+                    builder.OpenComponent<UpdateOrganizationDialog>(0);
+                    builder.AddAttribute(1, nameof(OrganizationEntity), entity);
+                    builder.CloseComponent();
+                }
+            });
+    }
+
+}
