@@ -39,12 +39,9 @@
 <h2>Map of @_name</h2>
 
 <div style="margin-bottom: 10px">
-    <RadzenButton Text="Ближайшая школа" Click="@(() => CalcNearestOrganization(OrganizationTypes.School))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
-    <RadzenButton Text="Школы" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.School))"/>
-    <RadzenButton Text="Ближайшая аптека" Click="@(() => CalcNearestOrganization(OrganizationTypes.Pharmacy))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
-    <RadzenButton Text="Аптеки" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.Pharmacy))"/>
-    <RadzenButton Text="Ближайшая Ветклиника" Click="@(() => CalcNearestOrganization(OrganizationTypes.Vet))" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
-    <RadzenButton Text="Ветклиники" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrgValueChanged(OrganizationTypes.Vet))"/>
+    <RadzenDropDown @bind-Value=@_selectedTypes Data="@_organizationTypes" Multiple=true Placeholder="Выберите типы организаций"/>
+    <RadzenButton Text="Ближайшие организации" Click="@(() => CalcNearestOrganizations())" ButtonStyle="ButtonStyle.Light" Disabled="@(_selectedPoint is null)"/>
+    <RadzenButton Text="Показать организации" ButtonStyle="ButtonStyle.Primary" Click="@(() => OnShowOrganizations())"/>
     <RadzenButton Text="Сборс" ButtonStyle="ButtonStyle.Danger" Click="ResetAsync"/>
 </div>
 
@@ -133,9 +130,11 @@
     private CityInfo _selectedCity;
     private Marker? _selectedPoint;
 
+    private List<OrganizationTypes> _organizationTypes = Enum.GetValues(typeof(OrganizationTypes)).Cast<OrganizationTypes>().ToList();
     private Dictionary<OrganizationTypes, List<Marker>> _markers = new();
     private Dictionary<OrganizationTypes, bool> _showOrganizations = new();
     private Dictionary<OrganizationTypes, (OrganizationEntity?, Marker?)> _nearestOrganization = new ();
+    private List<OrganizationTypes> _selectedTypes = new ();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -161,6 +160,22 @@
             Console.WriteLine(e);
         }
         await InvokeAsync(StateHasChanged);
+    }
+    
+    private async Task CalcNearestOrganizations()
+    {
+        foreach (var selectedType in _selectedTypes)
+        {
+            await CalcNearestOrganization(selectedType);
+        }
+    }
+
+    private async Task OnShowOrganizations()
+    {
+        foreach (var selectedType in _selectedTypes)
+        {
+            await OnShowOrgValueChanged(selectedType);
+        }
     }
 
     private async Task OnShowOrgValueChanged(OrganizationTypes type)
@@ -255,5 +270,14 @@
         // Delete selected marker
         _map.MarkersList.Remove(_selectedPoint);
         _selectedPoint = null;
+        _selectedTypes = new List<OrganizationTypes>();
+        
+        // Remove organization markers
+        _showOrganizations
+            .Where(kv => kv.Value)
+            .Select(kv => kv.Key)
+            .ToList()
+            .ForEach(async k => await OnShowOrgValueChanged(k));
+
     }
 }
